@@ -1,17 +1,22 @@
-//
-//  AeroPlanAppApp.swift
-//  AeroPlanApp
-//
-//  Created by Nicolas Guardado Guardado on 8/31/23.
-//
-
 import SwiftUI
+import Firebase
 
 @main
-struct AeroPlanAppApp: App {
+struct AeroPlanApp: App {
+    @StateObject var dataManager = DataManager()
+    @State private var isUserLoggedIn = false
+    @State private var token = ""
+    @State private var appMode: AppMode = .none
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(isUserLoggedIn: $isUserLoggedIn, token: $token,appMode: $appMode, dataManager: $dataManager
+            ).environmentObject(dataManager)
         }
     }
+    
 }
