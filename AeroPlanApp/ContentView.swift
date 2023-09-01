@@ -15,7 +15,7 @@ struct ContentView: View {
     @EnvironmentObject var dataManager: DataManager
     @Binding var appMode: AppMode
     
-    init(isUserLoggedIn: Binding<Bool>, token: Binding<String>,appMode: Binding<AppMode>, dataManager: Binding<DataManager>) {
+    init(isUserLoggedIn: Binding<Bool>, token: Binding<String>,appMode: Binding<AppMode>) {
            _isUserLoggedIn = isUserLoggedIn
            _token = token
             _appMode = appMode
@@ -199,7 +199,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(isUserLoggedIn: .constant(false), token: .constant(""), appMode: .constant(.ground), dataManager: .constant(DataManager()))
+        ContentView(isUserLoggedIn: .constant(false), token: .constant(""), appMode: .constant(.ground))
     }
 }
 

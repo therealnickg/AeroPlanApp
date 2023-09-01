@@ -14,7 +14,7 @@ struct AeroPlanApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(isUserLoggedIn: $isUserLoggedIn, token: $token,appMode: $appMode, dataManager: $dataManager
+            ContentView(isUserLoggedIn: $isUserLoggedIn, token: $token,appMode: $appMode
             ).environmentObject(dataManager)
         }
     }
