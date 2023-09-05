@@ -49,6 +49,7 @@
 		37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC82072AA4341D003D1E09 /* DataManager.swift */; };
 		37CC820A2AA4342A003D1E09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */; };
 		37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC820B2AA43470003D1E09 /* AppMode.swift */; };
+		ED607E9E2AA7BD2700B186CD /* PilotReviewNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607E9D2AA7BD2700B186CD /* PilotReviewNotesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		37CC82072AA4341D003D1E09 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37CC820B2AA43470003D1E09 /* AppMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMode.swift; sourceTree = "<group>"; };
+		ED607E9D2AA7BD2700B186CD /* PilotReviewNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotReviewNotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				374D9B282AA27F1F00A33BA8 /* SwiftUIView.swift */,
 				374D9B1E2AA27E8C00A33BA8 /* GroundView.swift */,
 				374D9B202AA27E9400A33BA8 /* ProfileView.swift */,
+				ED607E9D2AA7BD2700B186CD /* PilotReviewNotesView.swift */,
 				374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */,
 				374D9ACC2AA1A06C00A33BA8 /* Preview Content */,
 			);
@@ -263,6 +266,7 @@
 				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
 				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
 				374D9B1B2AA27E1300A33BA8 /* ContentView.swift in Sources */,
+				ED607E9E2AA7BD2700B186CD /* PilotReviewNotesView.swift in Sources */,
 				374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */,
 				37CC82062AA4340D003D1E09 /* Pilot.swift in Sources */,
 				374D9B1D2AA27E5000A33BA8 /* HomeView.swift in Sources */,
