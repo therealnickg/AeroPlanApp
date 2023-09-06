@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PilotReviewNotesView: View {
+    @State private var userInput: String = ""
+    
     var body: some View {
         VStack{
             Text("Pilot Review Notes")
@@ -15,7 +17,16 @@ struct PilotReviewNotesView: View {
                 .foregroundColor(.red)
                 .padding(.top)
             Spacer()
+            
+            TextField("Pilot Notes", text: $userInput)
+                .textFieldStyle(.roundedBorder)
+            }
+        GroupBox(label: Text("Pilot Notes")) {
+            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
         }
+        
+        
+        
     }
     
     
