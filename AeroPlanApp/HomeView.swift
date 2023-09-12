@@ -117,6 +117,7 @@ struct HomeView: View {
                                 .frame(maxWidth:  geometry.size.width / 2)
                                 .background(Color.green)
                         }
+                        
                     }
                 }
                 .frame(width: geometry.size.width)
