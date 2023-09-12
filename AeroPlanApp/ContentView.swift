@@ -55,7 +55,7 @@ struct ContentView: View {
                     .textFieldStyle(.plain)
                     .placeholder(when: email.isEmpty) {
                         Text("Email")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .bold()
                     }
                 
@@ -68,7 +68,7 @@ struct ContentView: View {
                     .textFieldStyle(.plain)
                     .placeholder(when: password.isEmpty) {
                         Text("Password")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .bold()
                     }
                 
