@@ -11,5 +11,6 @@ enum AppMode: Hashable{
     case none
     case ground
     case air
+    case pReview
     
 }

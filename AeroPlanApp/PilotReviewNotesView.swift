@@ -4,7 +4,7 @@
 //
 //  Created by Aaron Yu on 9/5/23.
 //
-
+import Foundation
 import SwiftUI
 
 struct PilotReviewNotesView: View {

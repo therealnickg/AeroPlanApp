@@ -93,6 +93,11 @@ struct HomeView: View {
                                 EmptyView()
                             }
                         }
+                        else if appMode == .pReview {
+                            NavigationLink(destination: PilotReviewNotesView(), tag: .pReview, selection: appModeBinding) {
+                                EmptyView()
+                            }
+                        }
 
                         
                     }
@@ -116,6 +121,15 @@ struct HomeView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth:  geometry.size.width / 2)
                                 .background(Color.green)
+                        }
+                        Button(action: {
+                            appMode = .pReview
+                        }) {
+                            Image("Notes")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: geometry.size.width / 2)
+                                .background(Color.red)
                         }
                         
                     }
