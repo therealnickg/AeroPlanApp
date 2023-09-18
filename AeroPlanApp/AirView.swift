@@ -9,6 +9,6 @@ import SwiftUI
 
 struct AirView: View {
     var body: some View {
-        Text("Air")
+        Text("Air1236")
     }
 }
