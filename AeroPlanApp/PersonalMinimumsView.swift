@@ -11,6 +11,9 @@ struct PersonalMinimumsView: View {
     @State private var visibility: String = ""
     @State private var cloudCeiling: String = ""
     @State private var windSpeed: String = ""
+    @State private var crosswind: String = ""
+    @State private var runwayLength: String = ""
+    @State private var runwayWidth: String = ""
 
     var body: some View {
         NavigationView {
@@ -20,19 +23,23 @@ struct PersonalMinimumsView: View {
                         .keyboardType(.numberPad)
                 }
                 Section(header: Text("Minimum Cloud Ceiling")) {
-                    TextField("Feet", text: $visibility)
+                    TextField("Feet", text: $cloudCeiling)
                         .keyboardType(.numberPad)
                 }
-                Section(header: Text("Maximum Wind Velocity")) {
-                    TextField("Knots", text: $visibility)
+                Section(header: Text("Maximum Wind Speed")) {
+                    TextField("Knots", text: $windSpeed)
+                        .keyboardType(.numberPad)
+                }
+                Section(header: Text("Maximum Crosswind")) {
+                    TextField("Knots", text: $crosswind)
                         .keyboardType(.numberPad)
                 }
                 Section(header: Text("Minimum Runway Length")) {
-                    TextField("Feet", text: $visibility)
+                    TextField("Feet", text: $runwayLength)
                         .keyboardType(.numberPad)
                 }
                 Section(header: Text("Minimum Runway Width")) {
-                    TextField("Feet", text: $visibility)
+                    TextField("Feet", text: $runwayWidth)
                         .keyboardType(.numberPad)
                 }
 
@@ -46,6 +53,15 @@ struct PersonalMinimumsView: View {
             }
             .navigationBarTitle("Personal Minimums")
         }
+        NavigationLink(destination: ExistingConditionsView(visibility: visibility, cloudCeiling: cloudCeiling, windSpeed: windSpeed)) {
+                        Text("Enter Airport Conditions")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+        .navigationBarTitle("Personal Minimums")
     }
 }
 
