@@ -37,8 +37,11 @@
 		374D9B112AA27B1C00A33BA8 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 374D9B102AA27B1C00A33BA8 /* FirebaseRemoteConfigSwift */; };
 		374D9B132AA27B1C00A33BA8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 374D9B122AA27B1C00A33BA8 /* FirebaseStorage */; };
 		374D9B152AA27B1C00A33BA8 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 374D9B142AA27B1C00A33BA8 /* FirebaseStorageCombine-Community */; };
+<<<<<<< Updated upstream
 		374D9B1B2AA27E1300A33BA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B1A2AA27E1300A33BA8 /* ContentView.swift */; };
 		374D9B1D2AA27E5000A33BA8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B1C2AA27E5000A33BA8 /* HomeView.swift */; };
+=======
+>>>>>>> Stashed changes
 		374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B1E2AA27E8C00A33BA8 /* GroundView.swift */; };
 		374D9B212AA27E9400A33BA8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B202AA27E9400A33BA8 /* ProfileView.swift */; };
 		374D9B232AA27E9800A33BA8 /* AirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B222AA27E9800A33BA8 /* AirView.swift */; };
@@ -50,6 +53,16 @@
 		37CC820A2AA4342A003D1E09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */; };
 		37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC820B2AA43470003D1E09 /* AppMode.swift */; };
 		ED607E9E2AA7BD2700B186CD /* PilotReviewNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607E9D2AA7BD2700B186CD /* PilotReviewNotesView.swift */; };
+<<<<<<< Updated upstream
+=======
+		FE0D7B172AB9682800AC1BD1 /* FlightLogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D7B162AB9682800AC1BD1 /* FlightLogEntry.swift */; };
+		FE0D7B192AB9683200AC1BD1 /* EditLogEntryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D7B182AB9683200AC1BD1 /* EditLogEntryForm.swift */; };
+		FE0D7B1B2AB9684800AC1BD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D7B1A2AB9684800AC1BD1 /* ContentView.swift */; };
+		FE0D7B1D2AB9685E00AC1BD1 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D7B1C2AB9685E00AC1BD1 /* LogsView.swift */; };
+		FE0D7B1F2AB9686B00AC1BD1 /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D7B1E2AB9686B00AC1BD1 /* LogDetailView.swift */; };
+		FE0D7B212AB9689900AC1BD1 /* LogEntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D7B202AB9689900AC1BD1 /* LogEntryRow.swift */; };
+		FE0D7B232AB968C300AC1BD1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D7B222AB968C300AC1BD1 /* HomeView.swift */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +70,11 @@
 		374D9AC62AA1A06B00A33BA8 /* AeroPlanAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanAppApp.swift; sourceTree = "<group>"; };
 		374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		374D9ACD2AA1A06C00A33BA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		374D9B1A2AA27E1300A33BA8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		374D9B1C2AA27E5000A33BA8 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> Stashed changes
 		374D9B1E2AA27E8C00A33BA8 /* GroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
 		374D9B202AA27E9400A33BA8 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		374D9B222AA27E9800A33BA8 /* AirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirView.swift; sourceTree = "<group>"; };
@@ -70,6 +86,16 @@
 		37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37CC820B2AA43470003D1E09 /* AppMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMode.swift; sourceTree = "<group>"; };
 		ED607E9D2AA7BD2700B186CD /* PilotReviewNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotReviewNotesView.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		FE0D7B162AB9682800AC1BD1 /* FlightLogEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlightLogEntry.swift; path = ../../../Desktop/AeroPlan/AeroPlan/AeroPlan/FlightLogEntry.swift; sourceTree = "<group>"; };
+		FE0D7B182AB9683200AC1BD1 /* EditLogEntryForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditLogEntryForm.swift; path = ../../../Desktop/AeroPlan/AeroPlan/AeroPlan/EditLogEntryForm.swift; sourceTree = "<group>"; };
+		FE0D7B1A2AB9684800AC1BD1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../Desktop/AeroPlan/AeroPlan/AeroPlan/Views/ContentView.swift; sourceTree = "<group>"; };
+		FE0D7B1C2AB9685E00AC1BD1 /* LogsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogsView.swift; path = ../../../Desktop/AeroPlan/AeroPlan/AeroPlan/Views/LogsView.swift; sourceTree = "<group>"; };
+		FE0D7B1E2AB9686B00AC1BD1 /* LogDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
+		FE0D7B202AB9689900AC1BD1 /* LogEntryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogEntryRow.swift; path = ../../../Desktop/AeroPlan/AeroPlan/AeroPlan/Views/LogEntryRow.swift; sourceTree = "<group>"; };
+		FE0D7B222AB968C300AC1BD1 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../../../Desktop/AeroPlan/AeroPlan/AeroPlan/Views/HomeView.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +158,26 @@
 				37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */,
 				374D9AC62AA1A06B00A33BA8 /* AeroPlanAppApp.swift */,
 				37CC820B2AA43470003D1E09 /* AppMode.swift */,
+<<<<<<< Updated upstream
 				374D9B1A2AA27E1300A33BA8 /* ContentView.swift */,
 				374D9B242AA27F1600A33BA8 /* ListView.swift */,
 				374D9B262AA27F1A00A33BA8 /* NewPilotView.swift */,
 				37CC82072AA4341D003D1E09 /* DataManager.swift */,
 				37CC82052AA4340D003D1E09 /* Pilot.swift */,
 				374D9B1C2AA27E5000A33BA8 /* HomeView.swift */,
+=======
+				FE0D7B1A2AB9684800AC1BD1 /* ContentView.swift */,
+				FE0D7B1E2AB9686B00AC1BD1 /* LogDetailView.swift */,
+				374D9B242AA27F1600A33BA8 /* ListView.swift */,
+				374D9B262AA27F1A00A33BA8 /* NewPilotView.swift */,
+				FE0D7B182AB9683200AC1BD1 /* EditLogEntryForm.swift */,
+				FE0D7B222AB968C300AC1BD1 /* HomeView.swift */,
+				37CC82072AA4341D003D1E09 /* DataManager.swift */,
+				FE0D7B1C2AB9685E00AC1BD1 /* LogsView.swift */,
+				FE0D7B202AB9689900AC1BD1 /* LogEntryRow.swift */,
+				FE0D7B162AB9682800AC1BD1 /* FlightLogEntry.swift */,
+				37CC82052AA4340D003D1E09 /* Pilot.swift */,
+>>>>>>> Stashed changes
 				374D9B222AA27E9800A33BA8 /* AirView.swift */,
 				374D9B282AA27F1F00A33BA8 /* SwiftUIView.swift */,
 				374D9B1E2AA27E8C00A33BA8 /* GroundView.swift */,
@@ -262,6 +302,7 @@
 			files = (
 				374D9B272AA27F1A00A33BA8 /* NewPilotView.swift in Sources */,
 				374D9B212AA27E9400A33BA8 /* ProfileView.swift in Sources */,
+<<<<<<< Updated upstream
 				37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */,
 				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
 				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
@@ -273,6 +314,24 @@
 				37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */,
 				374D9AC72AA1A06B00A33BA8 /* AeroPlanAppApp.swift in Sources */,
 				374D9B232AA27E9800A33BA8 /* AirView.swift in Sources */,
+=======
+				FE0D7B1B2AB9684800AC1BD1 /* ContentView.swift in Sources */,
+				37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */,
+				FE0D7B192AB9683200AC1BD1 /* EditLogEntryForm.swift in Sources */,
+				FE0D7B172AB9682800AC1BD1 /* FlightLogEntry.swift in Sources */,
+				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
+				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
+				ED607E9E2AA7BD2700B186CD /* PilotReviewNotesView.swift in Sources */,
+				FE0D7B1D2AB9685E00AC1BD1 /* LogsView.swift in Sources */,
+				374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */,
+				37CC82062AA4340D003D1E09 /* Pilot.swift in Sources */,
+				FE0D7B1F2AB9686B00AC1BD1 /* LogDetailView.swift in Sources */,
+				37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */,
+				374D9AC72AA1A06B00A33BA8 /* AeroPlanAppApp.swift in Sources */,
+				FE0D7B212AB9689900AC1BD1 /* LogEntryRow.swift in Sources */,
+				374D9B232AA27E9800A33BA8 /* AirView.swift in Sources */,
+				FE0D7B232AB968C300AC1BD1 /* HomeView.swift in Sources */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
