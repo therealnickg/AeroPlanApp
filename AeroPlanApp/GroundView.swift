@@ -29,6 +29,8 @@ struct GroundView: View {
 		ButtonItem(title: "Tools", hexColor: 0x8AC1E7, imageName: "Tools", destination: "Tools")
 	]
 	
+	// FIX
+	// custom font not working only font size
 	let customFont = Font.custom("Geologica-Black", size: 49)
 	
 	var body: some View {
