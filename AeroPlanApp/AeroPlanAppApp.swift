@@ -18,5 +18,4 @@ struct AeroPlanApp: App {
             ).environmentObject(dataManager)
         }
     }
-    
 }

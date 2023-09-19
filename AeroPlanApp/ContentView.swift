@@ -23,7 +23,6 @@ struct ContentView: View {
             // persistent data
             _stayLoggedIn = State(initialValue: UserDefaults.standard.bool(forKey: stayLoggedInKey))
             _email = State(initialValue: UserDefaults.standard.string(forKey: "userEmail") ?? "")
-        
        }
     
     var body: some View {
