@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE69ED982ACD377A00C5DCA5 /* AeroPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69ED972ACD377A00C5DCA5 /* AeroPlanApp.swift */; };
+		FE69ED9A2ACD377A00C5DCA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69ED992ACD377A00C5DCA5 /* ContentView.swift */; };
+		FE69ED9C2ACD377B00C5DCA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE69ED9B2ACD377B00C5DCA5 /* Assets.xcassets */; };
+		FE69EDA02ACD377B00C5DCA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE69ED9F2ACD377B00C5DCA5 /* Preview Assets.xcassets */; };
+		FE69EDAA2ACD377B00C5DCA5 /* AeroPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDA92ACD377B00C5DCA5 /* AeroPlanTests.swift */; };
+		FE69EDB42ACD377B00C5DCA5 /* AeroPlanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDB32ACD377B00C5DCA5 /* AeroPlanUITests.swift */; };
+		FE69EDB62ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDB52ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE69EDA62ACD377B00C5DCA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE69ED8C2ACD377A00C5DCA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE69ED932ACD377A00C5DCA5;
+			remoteInfo = AeroPlan;
+		};
+		FE69EDB02ACD377B00C5DCA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE69ED8C2ACD377A00C5DCA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE69ED932ACD377A00C5DCA5;
+			remoteInfo = AeroPlan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE69ED942ACD377A00C5DCA5 /* AeroPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AeroPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE69ED972ACD377A00C5DCA5 /* AeroPlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanApp.swift; sourceTree = "<group>"; };
+		FE69ED992ACD377A00C5DCA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FE69ED9B2ACD377B00C5DCA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE69ED9D2ACD377B00C5DCA5 /* AeroPlan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AeroPlan.entitlements; sourceTree = "<group>"; };
+		FE69ED9F2ACD377B00C5DCA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FE69EDA52ACD377B00C5DCA5 /* AeroPlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroPlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE69EDA92ACD377B00C5DCA5 /* AeroPlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanTests.swift; sourceTree = "<group>"; };
+		FE69EDAF2ACD377B00C5DCA5 /* AeroPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE69EDB32ACD377B00C5DCA5 /* AeroPlanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanUITests.swift; sourceTree = "<group>"; };
+		FE69EDB52ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE69ED912ACD377A00C5DCA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69EDA22ACD377B00C5DCA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69EDAC2ACD377B00C5DCA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE69ED8B2ACD377A00C5DCA5 = {
+			isa = PBXGroup;
+			children = (
+				FE69ED962ACD377A00C5DCA5 /* AeroPlan */,
+				FE69EDA82ACD377B00C5DCA5 /* AeroPlanTests */,
+				FE69EDB22ACD377B00C5DCA5 /* AeroPlanUITests */,
+				FE69ED952ACD377A00C5DCA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE69ED952ACD377A00C5DCA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE69ED942ACD377A00C5DCA5 /* AeroPlan.app */,
+				FE69EDA52ACD377B00C5DCA5 /* AeroPlanTests.xctest */,
+				FE69EDAF2ACD377B00C5DCA5 /* AeroPlanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE69ED962ACD377A00C5DCA5 /* AeroPlan */ = {
+			isa = PBXGroup;
+			children = (
+				FE69ED972ACD377A00C5DCA5 /* AeroPlanApp.swift */,
+				FE69ED992ACD377A00C5DCA5 /* ContentView.swift */,
+				FE69ED9B2ACD377B00C5DCA5 /* Assets.xcassets */,
+				FE69ED9D2ACD377B00C5DCA5 /* AeroPlan.entitlements */,
+				FE69ED9E2ACD377B00C5DCA5 /* Preview Content */,
+			);
+			path = AeroPlan;
+			sourceTree = "<group>";
+		};
+		FE69ED9E2ACD377B00C5DCA5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FE69ED9F2ACD377B00C5DCA5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FE69EDA82ACD377B00C5DCA5 /* AeroPlanTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE69EDA92ACD377B00C5DCA5 /* AeroPlanTests.swift */,
+			);
+			path = AeroPlanTests;
+			sourceTree = "<group>";
+		};
+		FE69EDB22ACD377B00C5DCA5 /* AeroPlanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE69EDB32ACD377B00C5DCA5 /* AeroPlanUITests.swift */,
+				FE69EDB52ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift */,
+			);
+			path = AeroPlanUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE69ED932ACD377A00C5DCA5 /* AeroPlan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE69EDB92ACD377B00C5DCA5 /* Build configuration list for PBXNativeTarget "AeroPlan" */;
+			buildPhases = (
+				FE69ED902ACD377A00C5DCA5 /* Sources */,
+				FE69ED912ACD377A00C5DCA5 /* Frameworks */,
+				FE69ED922ACD377A00C5DCA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AeroPlan;
+			productName = AeroPlan;
+			productReference = FE69ED942ACD377A00C5DCA5 /* AeroPlan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE69EDA42ACD377B00C5DCA5 /* AeroPlanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE69EDBC2ACD377B00C5DCA5 /* Build configuration list for PBXNativeTarget "AeroPlanTests" */;
+			buildPhases = (
+				FE69EDA12ACD377B00C5DCA5 /* Sources */,
+				FE69EDA22ACD377B00C5DCA5 /* Frameworks */,
+				FE69EDA32ACD377B00C5DCA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE69EDA72ACD377B00C5DCA5 /* PBXTargetDependency */,
+			);
+			name = AeroPlanTests;
+			productName = AeroPlanTests;
+			productReference = FE69EDA52ACD377B00C5DCA5 /* AeroPlanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE69EDAE2ACD377B00C5DCA5 /* AeroPlanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE69EDBF2ACD377B00C5DCA5 /* Build configuration list for PBXNativeTarget "AeroPlanUITests" */;
+			buildPhases = (
+				FE69EDAB2ACD377B00C5DCA5 /* Sources */,
+				FE69EDAC2ACD377B00C5DCA5 /* Frameworks */,
+				FE69EDAD2ACD377B00C5DCA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE69EDB12ACD377B00C5DCA5 /* PBXTargetDependency */,
+			);
+			name = AeroPlanUITests;
+			productName = AeroPlanUITests;
+			productReference = FE69EDAF2ACD377B00C5DCA5 /* AeroPlanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE69ED8C2ACD377A00C5DCA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FE69ED932ACD377A00C5DCA5 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FE69EDA42ACD377B00C5DCA5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FE69ED932ACD377A00C5DCA5;
+					};
+					FE69EDAE2ACD377B00C5DCA5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FE69ED932ACD377A00C5DCA5;
+					};
+				};
+			};
+			buildConfigurationList = FE69ED8F2ACD377A00C5DCA5 /* Build configuration list for PBXProject "AeroPlan" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE69ED8B2ACD377A00C5DCA5;
+			productRefGroup = FE69ED952ACD377A00C5DCA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE69ED932ACD377A00C5DCA5 /* AeroPlan */,
+				FE69EDA42ACD377B00C5DCA5 /* AeroPlanTests */,
+				FE69EDAE2ACD377B00C5DCA5 /* AeroPlanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE69ED922ACD377A00C5DCA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE69EDA02ACD377B00C5DCA5 /* Preview Assets.xcassets in Resources */,
+				FE69ED9C2ACD377B00C5DCA5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69EDA32ACD377B00C5DCA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69EDAD2ACD377B00C5DCA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE69ED902ACD377A00C5DCA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE69ED9A2ACD377A00C5DCA5 /* ContentView.swift in Sources */,
+				FE69ED982ACD377A00C5DCA5 /* AeroPlanApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69EDA12ACD377B00C5DCA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE69EDAA2ACD377B00C5DCA5 /* AeroPlanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE69EDAB2ACD377B00C5DCA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE69EDB62ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift in Sources */,
+				FE69EDB42ACD377B00C5DCA5 /* AeroPlanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE69EDA72ACD377B00C5DCA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE69ED932ACD377A00C5DCA5 /* AeroPlan */;
+			targetProxy = FE69EDA62ACD377B00C5DCA5 /* PBXContainerItemProxy */;
+		};
+		FE69EDB12ACD377B00C5DCA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE69ED932ACD377A00C5DCA5 /* AeroPlan */;
+			targetProxy = FE69EDB02ACD377B00C5DCA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FE69EDB72ACD377B00C5DCA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FE69EDB82ACD377B00C5DCA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FE69EDBA2ACD377B00C5DCA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AeroPlan/AeroPlan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AeroPlan/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seniorproject.AeroPlan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE69EDBB2ACD377B00C5DCA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AeroPlan/AeroPlan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AeroPlan/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seniorproject.AeroPlan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FE69EDBD2ACD377B00C5DCA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seniorproject.AeroPlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AeroPlan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AeroPlan";
+			};
+			name = Debug;
+		};
+		FE69EDBE2ACD377B00C5DCA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seniorproject.AeroPlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AeroPlan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AeroPlan";
+			};
+			name = Release;
+		};
+		FE69EDC02ACD377B00C5DCA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seniorproject.AeroPlanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AeroPlan;
+			};
+			name = Debug;
+		};
+		FE69EDC12ACD377B00C5DCA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seniorproject.AeroPlanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AeroPlan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE69ED8F2ACD377A00C5DCA5 /* Build configuration list for PBXProject "AeroPlan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE69EDB72ACD377B00C5DCA5 /* Debug */,
+				FE69EDB82ACD377B00C5DCA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE69EDB92ACD377B00C5DCA5 /* Build configuration list for PBXNativeTarget "AeroPlan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE69EDBA2ACD377B00C5DCA5 /* Debug */,
+				FE69EDBB2ACD377B00C5DCA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE69EDBC2ACD377B00C5DCA5 /* Build configuration list for PBXNativeTarget "AeroPlanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE69EDBD2ACD377B00C5DCA5 /* Debug */,
+				FE69EDBE2ACD377B00C5DCA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE69EDBF2ACD377B00C5DCA5 /* Build configuration list for PBXNativeTarget "AeroPlanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE69EDC02ACD377B00C5DCA5 /* Debug */,
+				FE69EDC12ACD377B00C5DCA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE69ED8C2ACD377A00C5DCA5 /* Project object */;
+}
