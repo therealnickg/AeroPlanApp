@@ -14,6 +14,8 @@
 		FE69EDAA2ACD377B00C5DCA5 /* AeroPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDA92ACD377B00C5DCA5 /* AeroPlanTests.swift */; };
 		FE69EDB42ACD377B00C5DCA5 /* AeroPlanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDB32ACD377B00C5DCA5 /* AeroPlanUITests.swift */; };
 		FE69EDB62ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDB52ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift */; };
+		FE69EDC32ACD37AC00C5DCA5 /* AirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDC22ACD37AC00C5DCA5 /* AirView.swift */; };
+		FE69EDC52ACD37B100C5DCA5 /* AppMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69EDC42ACD37B100C5DCA5 /* AppMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		FE69EDAF2ACD377B00C5DCA5 /* AeroPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE69EDB32ACD377B00C5DCA5 /* AeroPlanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanUITests.swift; sourceTree = "<group>"; };
 		FE69EDB52ACD377B00C5DCA5 /* AeroPlanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FE69EDC22ACD37AC00C5DCA5 /* AirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AirView.swift; path = "../../../Downloads/AeroPlanApp-Aaron-s-Actual-Branch/AeroPlanApp/AirView.swift"; sourceTree = "<group>"; };
+		FE69EDC42ACD37B100C5DCA5 /* AppMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppMode.swift; path = "../../../Downloads/AeroPlanApp-Aaron-s-Actual-Branch/AeroPlanApp/AppMode.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				FE69ED972ACD377A00C5DCA5 /* AeroPlanApp.swift */,
+				FE69EDC22ACD37AC00C5DCA5 /* AirView.swift */,
 				FE69ED992ACD377A00C5DCA5 /* ContentView.swift */,
 				FE69ED9B2ACD377B00C5DCA5 /* Assets.xcassets */,
 				FE69ED9D2ACD377B00C5DCA5 /* AeroPlan.entitlements */,
+				FE69EDC42ACD37B100C5DCA5 /* AppMode.swift */,
 				FE69ED9E2ACD377B00C5DCA5 /* Preview Content */,
 			);
 			path = AeroPlan;
@@ -261,6 +267,8 @@
 			files = (
 				FE69ED9A2ACD377A00C5DCA5 /* ContentView.swift in Sources */,
 				FE69ED982ACD377A00C5DCA5 /* AeroPlanApp.swift in Sources */,
+				FE69EDC52ACD37B100C5DCA5 /* AppMode.swift in Sources */,
+				FE69EDC32ACD37AC00C5DCA5 /* AirView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
