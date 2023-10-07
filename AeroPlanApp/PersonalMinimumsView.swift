@@ -4,7 +4,6 @@
 //
 //  Created by Nicolas Guardado Guardado on 9/14/23.
 //
-// This class will write to a file
 
 import SwiftUI
 
@@ -42,19 +41,6 @@ struct PersonalMinimumsView: View {
                 Section(header: Text("Minimum Runway Width")) {
                     TextField("Feet", text: $runwayWidth)
                         .keyboardType(.numberPad)
-                }
-
-                Section {
-                    Button(action: {
-                        // Initialize the data storage manager with a file name
-                        let dataStorage = DataStorageManager(fileName: "PilotData.dat")
-
-                        // Write data to the file
-                        let dataToWrite = "Hello, World!".data(using: .utf8)!
-                        dataStorage.writeData(dataToWrite)
-                    }) {
-                        Text("Save")
-                    }
                 }
             }
             .navigationBarTitle("Personal Minimums")
