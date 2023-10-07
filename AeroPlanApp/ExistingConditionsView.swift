@@ -15,8 +15,32 @@ struct ExistingConditionsView: View {
     @State private var currentVisibility: Double = 0.0
     @State private var currentCloudCeiling: Double = 0.0
     @State private var currentWindSpeed: Double = 0.0
+    @State private var readyToFly: String = ""
     
     @Environment(\.presentationMode) var presentationMode
+    
+    func readyToFlyBool() -> Bool {
+        var visibilityBool: Bool = false
+        var ceilingBool: Bool = false
+        var windSpeedBool: Bool = false
+        if (currentVisibility >= 5)
+        {
+            visibilityBool = true
+        }
+        if (currentCloudCeiling >= 3000)
+        {
+            ceilingBool = true
+        }
+        if (currentWindSpeed < 15)
+        {
+            windSpeedBool = true
+        }
+        if (visibilityBool && ceilingBool && windSpeedBool)
+        {
+            return true
+        }
+        return false
+    }
 
     var body: some View {
         VStack {
@@ -42,23 +66,37 @@ struct ExistingConditionsView: View {
             Slider(value: $currentCloudCeiling, in: 0...5000, step: 100)
             Text("Current Cloud Ceiling: \(Int(currentCloudCeiling)) feet")
 
-            Slider(value: $currentWindSpeed, in: 0...50, step: 1)
+            Slider(value: $currentWindSpeed, in: 0...30, step: 1)
             Text("Current Wind Speed: \(Int(currentWindSpeed)) knots\n\n")
 
             Button(action: {
-                // Compare the current conditions with personal minimums here
-                // You can implement your logic to compare and show a result.
-                // For simplicity, you can just print a message for now.
-                print("Comparing against personal minimums...")
+                if (readyToFlyBool())
+                {
+                    readyToFly = ""
+                } else
+                {
+                    readyToFly = ""
+                }
             }) {
-                Text("Compare")
+                
+            }
+            if (readyToFlyBool())
+            {
+                Text("You are not ready to fly!")
                     .font(.headline)
                     .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
+                    .background(Color.red)
+                    .foregroundColor(Color.white)
                     .cornerRadius(10)
             }
-            Text("\n\n\nYou are ready to Fly!")
+            else {
+                Text("You are ready to fly!")
+                    .font(.headline)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
+            }
         }
         .padding()
     }

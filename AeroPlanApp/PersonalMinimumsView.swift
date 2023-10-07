@@ -4,6 +4,7 @@
 //
 //  Created by Nicolas Guardado Guardado on 9/14/23.
 //
+// This class will write to a file
 
 import SwiftUI
 
@@ -45,7 +46,12 @@ struct PersonalMinimumsView: View {
 
                 Section {
                     Button(action: {
-                        // Save the entered minimums to your data model or perform any other action.
+                        // Initialize the data storage manager with a file name
+                        let dataStorage = DataStorageManager(fileName: "PilotData.dat")
+
+                        // Write data to the file
+                        let dataToWrite = "Hello, World!".data(using: .utf8)!
+                        dataStorage.writeData(dataToWrite)
                     }) {
                         Text("Save")
                     }
@@ -53,15 +59,6 @@ struct PersonalMinimumsView: View {
             }
             .navigationBarTitle("Personal Minimums")
         }
-        NavigationLink(destination: ExistingConditionsView(visibility: visibility, cloudCeiling: cloudCeiling, windSpeed: windSpeed)) {
-                        Text("Enter Airport Conditions")
-                            .font(.headline)
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-        .navigationBarTitle("Personal Minimums")
     }
 }
 
