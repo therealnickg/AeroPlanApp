@@ -114,7 +114,7 @@ struct ContentView: View {
             }
         }
         .background(
-            Image("Home_background")
+            Image("Home Page")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: UIScreen.main.bounds.width,
