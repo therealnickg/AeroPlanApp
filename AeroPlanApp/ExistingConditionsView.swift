@@ -16,8 +16,6 @@ struct ExistingConditionsView: View {
     @State private var runwayWidth: String = ""
     @State private var readyToFly: String = ""
     
-    @Environment(\.presentationMode) var presentationMode
-    
     func readyToFlyBool() -> Bool {
         var visibilityBool: Bool = false
         var ceilingBool: Bool = false
@@ -69,13 +67,13 @@ struct ExistingConditionsView: View {
 
                 Slider(value: $currentWindSpeed, in: 0...30, step: 1)
                 Text("Current Wind Speed: \(Int(currentWindSpeed)) knots\n\n")
+                /*
                 Form {
                     Section(header: Text("Runway Length")) {
                         TextField("Feet", text: $runwayLength)
                             .keyboardType(.numberPad)
                     }
-                   
-                }
+                }*/
                 
                 if (readyToFlyBool())
                 {
