@@ -6,6 +6,9 @@
 //  Owner Om Kakadiya
 
 import SwiftUI
+import PDFKit
+
+// Enumerations for defining various status types for different health indicators
 
 enum IllnessStatus: Int {
     case none, feelingSick
@@ -30,15 +33,19 @@ enum FatigueStatus: Int {
 enum EmotionStatus: Int {
     case stable, emotionalDistress
 }
+// Enum for managing navigation to other views
 
 enum NavigationTag {
     case reportView
+    case airportListView
 }
 enum AskYourselfSection {
     case illness, medication, stress, alcohol, fatigue, emotions
 }
 
 struct IMSAFE_analysis: View {
+    // State properties for keeping track of each health indicator's status
+
     @State private var illness: IllnessStatus = .none
     @State private var medication: MedicationStatus = .none
     @State private var stress: StressStatus = .noStress
@@ -64,33 +71,46 @@ struct IMSAFE_analysis: View {
     var body: some View {
         NavigationView {
             VStack {
+                // Title for the analysis screen.
+
                 Text("IMSAFE Analysis")
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .shadow(color: .black, radius: 3, x: 0, y: 3)
                     .fontWeight(.bold)
                     .padding(.bottom, 20)
+                
+                // Form UI: A structured way to present multiple controls.
+
                 Form {
+                    // here i am adding the PDF which includes more information and this function has code in there.
+                    
                     GuidelinesLink()
                         .padding(.vertical, 10)
-        
+                    
+                    // Picker Views for each health indicator
+
                     Section {
-                        illnessPicker()
-                        medicationPicker()
-                        stressPicker()
-                        alcoholPicker()
-                        fatiguePicker()
-                        emotionsPicker()
+                        illnessPicker()// UI for selecting illness status.
+                        medicationPicker()// UI for selecting medication status.
+                        stressPicker() // UI for selecting stress levels.
+                        alcoholPicker() // UI for indicating alcohol consumption.
+                        fatiguePicker() // UI for indicating fatigue levels.
+                        emotionsPicker() // UI for indicating emotional status.
                     }
+                    // Notes section where users can type additional information.
 
                     Section(header: Text("Notes")) {
                         TextEditor(text: $notes)
                     }
-                    
+                    // Submission button UI.
+
                     Section {
                         HStack {
                             Spacer()
                             Button(action: {
+                                // Button animation and report generation.
+
                                 withAnimation {
                                     self.scaleEffect = 1.5
                                 }
@@ -103,12 +123,15 @@ struct IMSAFE_analysis: View {
                                 }
                             }) {
                                 HStack {
+                                    // Button content UI
+
                                     Spacer()
                                     Text("Submit")
                                     Spacer()
                                     Image(systemName: "arrow.right.circle.fill")
                                     Spacer()
                                 }
+                                // submit button effect and background color.
                                 .padding()
                                 .background(Color.blue)
                                 .foregroundColor(.white)
@@ -132,6 +155,8 @@ struct IMSAFE_analysis: View {
                     }
                 }
             }
+            // Background image for the screen with blur effect.
+
             .background(
                 Image("IMSAFE")
                     .resizable()
@@ -145,6 +170,8 @@ struct IMSAFE_analysis: View {
 
     
     func illnessPicker() -> some View {
+        // Provides the UI for picking an illness status
+
         VStack(alignment: .leading) {
             HStack {
                 Text("Illness")
@@ -329,6 +356,8 @@ struct IMSAFE_analysis: View {
     }
     
     func isSafeToFly() -> Bool {
+        // Determines whether it's safe to fly based on chosen indicators
+
         if illness == .feelingSick {
             return false
         }
@@ -356,6 +385,8 @@ struct IMSAFE_analysis: View {
     }
     
     func generateReport() -> Report {
+        // Generates a report based on the current status of the health indicators
+
         let overallStatus = isSafeToFly() ? "Safe to Fly" : "Not Safe to Fly"
         return Report(
             illness: description(for: illness),
@@ -416,20 +447,57 @@ struct IMSAFE_analysis: View {
     }
 }
 
+// View for providing a clickable link to open a guidelines PDF
+
 struct GuidelinesLink: View {
+    @State private var showPDF = false
+
     var body: some View {
-        Text("For a comprehensive understanding and detailed guidelines, please ")
-            .font(.body)
-            .foregroundColor(.black)
-            + Text("check out the guidelines.")
-            .underline()
-            .foregroundColor(Color.blue)
-//            .onTapGesture {
-//                // Add code to open the PDF or link here
-//            }
+        HStack(spacing: 5) {
+            Image(systemName: "info.circle.fill")
+                .foregroundColor(.blue)
+
+            Text("For more information,")
+                .font(.body)
+                .foregroundColor(.black)
+
+            Button(action: {
+                self.showPDF = true
+            }) {
+                Text("click here.")
+                    .underline()
+                    .foregroundColor(Color.blue)
+                    .fontWeight(.semibold)
+            }
+            .buttonStyle(PlainButtonStyle())
+        }
+        .padding(.all, 10)
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(8)
+        .sheet(isPresented: $showPDF) {
+            PDFViewRepresentable(pdfName: "PAVE")
+        }
     }
 }
 
+// UIViewRepresentable for displaying a PDF within SwiftUI.
+
+struct PDFViewRepresentable: UIViewRepresentable {
+    let pdfName: String
+
+    func makeUIView(context: Context) -> PDFView {
+        let pdfView = PDFView()
+        pdfView.autoScales = true
+        return pdfView
+    }
+
+    func updateUIView(_ uiView: PDFView, context: Context) {
+        if let docURL = Bundle.main.url(forResource: pdfName, withExtension: "pdf"),
+           let document = PDFDocument(url: docURL) {
+            uiView.document = document
+        }
+    }
+}
 
 struct IMSAFE_analysis_Previews: PreviewProvider {
     static var previews: some View {

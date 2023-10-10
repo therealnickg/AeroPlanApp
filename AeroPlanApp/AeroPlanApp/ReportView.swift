@@ -1,12 +1,13 @@
 
-//2nd
 //  ReportView.swift
 //  AeroPlanApp
 //
 //  Created by Guest Use on 9/9/23.
-//
+//  Owner Om kakadiya
 
 import SwiftUI
+
+// Data model for the IMSAFE report.
 
 struct Report {
     var illness: String
@@ -19,6 +20,7 @@ struct Report {
     var notes: String
     var dateTime: Date
 }
+// View representing the generated IMSAFE report.
 
 struct ReportView: View {
     var report: Report?
@@ -26,10 +28,14 @@ struct ReportView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
+                // Display the report if available, else show "No Report Available" message.
+
                 if let report = report {
                 
-                    // Overall Status
+                    // Display the overall status of the pilot.
                     Text(report.overallStatus)
+                    // Styling for the overall status.
+
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .padding()
@@ -37,13 +43,22 @@ struct ReportView: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .padding([.top, .horizontal])
+                    
+                    // Display the date and time when the report was generated.
+
                     Text("Report generated on: \(report.dateTime.formatted())")
+                    // Styling for the date and time.
+
                         .font(.footnote)
                         .fontWeight(.bold)
                         .foregroundColor(Color.blue)
                         .padding(.top)
                     
+                    // Information cards displaying details of each IMSAFE factor.
+
                     InfoCard(title: "Illness", value: report.illness, iconName: "thermometer")
+                    // ... (other InfoCards)
+
                     InfoCard(title: "Medication", value: report.medication, iconName: "pills")
                     InfoCard(title: "Alcohol", value: report.alcohol, iconName: "wineglass")
                     InfoCard(title: "Stress", value: report.stress, iconName: "exclamationmark.triangle")
@@ -59,12 +74,16 @@ struct ReportView: View {
                     }
                 }
             Button(action: {
+                // Button to share the generated report.
+
                 if report != nil {
                     shareReport()
                 }
             }) {
                 Text("Share Report")
                 Image(systemName: "square.and.arrow.up")
+                // Styling for the Share button.
+
             }
             .padding()
             .background(Color.blue)
@@ -76,6 +95,8 @@ struct ReportView: View {
         
             .navigationBarTitle("IMSAFE Report", displayMode: .inline)
         }
+    // Function to facilitate sharing of the IMSAFE report.
+
         func shareReport() {
             if let currentReport = report {
                 let reportText = "IMSAFE Analysis Report: \(currentReport.overallStatus) ... "
@@ -85,16 +106,21 @@ struct ReportView: View {
         }
         
     }
+// View representing the generated IMSAFE report.
+// UI component to display individual IMSAFE factors with their respective icons.
 
 struct InfoCard: View {
     var title: String
     var value: String
     var iconName: String
-    
+    // Dynamic color change based on the value of each factor.
+
     var valueColor: Color {
+        // Define conditions for color changes.
+
         if value == "None" {
             return .gray
-        } else if value == "Feeling Sick" || value == "On Medication" || value == "> 0.04% BAC" || value == "High Stress" || value == "Fatique" || value == "Emotionally Distress" {
+        } else if value == "Feeling Sick" || value == "On Medication" || value == "> 0.04%" || value == "High Stress" || value == "Fatique" || value == "Emotionally Distress" {
             return .red
         } else {
             return .green
@@ -127,6 +153,7 @@ struct InfoCard: View {
                 }
             }
 
+// Preview provider for SwiftUI Canvas.
 
 struct ReportView_Previews: PreviewProvider {
     static var previews: some View {
