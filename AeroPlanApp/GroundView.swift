@@ -1,0 +1,15 @@
+//
+//  Ground.swift
+//  AeroPlan
+//
+//  Created by Nguyen Vo on 8/22/23.
+//
+
+import SwiftUI
+
+struct GroundView: View {
+    var body: some View {
+        Text("Ground")
+    }
+}
+
