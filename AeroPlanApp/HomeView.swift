@@ -9,6 +9,8 @@ import SwiftUI
 import Firebase
 
 
+
+
 struct VisualEffectView: UIViewRepresentable {
     let blurStyle: UIBlurEffect.Style
 
@@ -94,10 +96,16 @@ struct HomeView: View {
                             }
                         }
                         else if appMode == .pReview {
-                            NavigationLink(destination: PilotReviewNotesView(), tag: .pReview, selection: appModeBinding) {
+                            NavigationLink(destination: PilotReviewNotesView(viewModel: PilotReviewNotesView.TextEditorViewModel()), tag: .pReview, selection: appModeBinding) {
                                 EmptyView()
                             }
                         }
+                        else if appMode == .GAPC {
+                            NavigationLink(destination: GAPCView(), tag: .GAPC, selection: appModeBinding){
+                                EmptyView()
+                            }
+                        }
+                        
 
                         
                     }
@@ -111,6 +119,7 @@ struct HomeView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth:  geometry.size.width / 2)
                                 .background(Color.blue)
+                                .padding(10)
                         }
                         
                         Button(action: {
@@ -121,6 +130,7 @@ struct HomeView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth:  geometry.size.width / 2)
                                 .background(Color.green)
+                                .padding(10)
                         }
                         Button(action: {
                             appMode = .pReview
@@ -130,7 +140,19 @@ struct HomeView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: geometry.size.width / 2)
                                 .background(Color.red)
+                                .padding(10)
                         }
+                        Button(action: {
+                            appMode = .GAPC
+                        }) {
+                            Image("Check.svg")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: geometry.size.width / 2)
+                                .background(Color.red)
+                                .padding(10)
+                        }
+                        
                         
                     }
                 }

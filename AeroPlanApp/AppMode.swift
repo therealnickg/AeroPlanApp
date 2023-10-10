@@ -11,10 +11,8 @@ enum AppMode: Hashable{
     case none
     case ground
     case air
-<<<<<<< Updated upstream
-=======
     case logs
->>>>>>> Stashed changes
     case pReview
+    case GAPC
     
 }
