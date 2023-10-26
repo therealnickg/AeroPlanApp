@@ -7,7 +7,7 @@ struct BackupPilotInstructionsView: View {
     @State private var showFAQs: Bool = false
     @State private var showResources: Bool = false
 
-    let segments = ["General Procedures", "Landing Assistance", "Emergency Landing", "Tutorials", "Calm Assistant"]
+    let segments = ["General Procedures", "Landing Assistance", "Emergency Landing", "Post-Emergency", "Tutorials", "Calm Assistant"]
     let icons = ["list.bullet", "airplane.circle", "exclamationmark.triangle", "checkmark.seal", "play.rectangle", "speaker.wave.2"]
     
     // Expanding instructions for more depth
@@ -28,20 +28,6 @@ struct BackupPilotInstructionsView: View {
             "Keep wings level.",
             "Apply brakes upon touch down."
         ],
-        "Emergency Landing": [
-                "Assess the Situation: Understand the reason for the emergency.",
-                "Stay Calm: Deep breaths. Clear mind. Avoid panicking.",
-                "Establish Communication: If possible, contact Air Traffic Control.",
-                "Secure the Aircraft: Fasten seatbelts, turn on emergency lights.",
-                "Find a Suitable Landing Site: Look for open fields, roads, or water.",
-                "Maintain Safe Airspeed: Ensure you're not flying too fast or too slow.",
-                "Landing Approach: Align the aircraft with the intended landing area.",
-                "Use Flaps: Control speed and descent. Extend fully if needed.",
-                "Brace for Impact: Protect your head and face.",
-                "Shutdown and Evacuate: Once landed, shut down systems and evacuate if safe.",
-                "After Landing: Contact emergency services if not done so.",
-                "Stay With the Aircraft: If in a remote location, it's easier for rescuers to spot."
-            ]
     ]
     
     let FAQs: [String] = [
@@ -52,7 +38,6 @@ struct BackupPilotInstructionsView: View {
         "How long can the plane remain airborne?",
         "What if there's bad weather?"
     ]
-    
     
     let resources: [String] = [
         "Online Flight Tutorial Video",
@@ -88,11 +73,7 @@ struct BackupPilotInstructionsView: View {
                                 }
                             }
                             .padding()
-                            .background(
-                                    LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.1), Color.white]), startPoint: .top, endPoint: .bottom)
-                                )
-                            .edgesIgnoringSafeArea(.all)  // To make the background extend to the edges
-                            .navigationBarTitle("", displayMode: .inline)
+                            .background(Color.gray.opacity(0.1))
                             .cornerRadius(10)
                             .padding(.horizontal)
                         }

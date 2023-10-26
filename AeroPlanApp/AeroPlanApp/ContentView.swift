@@ -1,4 +1,4 @@
-
+    
 import SwiftUI
 import Firebase
 import CryptoKit
@@ -23,7 +23,6 @@ struct ContentView: View {
             // persistent data
             _stayLoggedIn = State(initialValue: UserDefaults.standard.bool(forKey: stayLoggedInKey))
             _email = State(initialValue: UserDefaults.standard.string(forKey: "userEmail") ?? "")
-        
        }
     
     var body: some View {
@@ -55,7 +54,7 @@ struct ContentView: View {
                     .textFieldStyle(.plain)
                     .placeholder(when: email.isEmpty) {
                         Text("Email")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .bold()
                     }
                 
@@ -68,7 +67,7 @@ struct ContentView: View {
                     .textFieldStyle(.plain)
                     .placeholder(when: password.isEmpty) {
                         Text("Password")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .bold()
                     }
                 
