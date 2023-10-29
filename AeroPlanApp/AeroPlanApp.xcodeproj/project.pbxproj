@@ -14,6 +14,7 @@
 		2051BA0A2ACFF44C00396490 /* AirportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051BA092ACFF44C00396490 /* AirportListView.swift */; };
 		2051BA0C2AD05DD900396490 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051BA0B2AD05DD900396490 /* SearchBarView.swift */; };
 		2051BA0E2AD1D2D000396490 /* BackupPilotInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051BA0D2AD1D2D000396490 /* BackupPilotInstructionsView.swift */; };
+		20F590FA2AED8F700036AAD5 /* AlternativesAirportsFlightPlanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F590F92AED8F700036AAD5 /* AlternativesAirportsFlightPlanning.swift */; };
 		374D9AC72AA1A06B00A33BA8 /* AeroPlanAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9AC62AA1A06B00A33BA8 /* AeroPlanAppApp.swift */; };
 		374D9ACB2AA1A06C00A33BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */; };
 		374D9ACE2AA1A06C00A33BA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374D9ACD2AA1A06C00A33BA8 /* Preview Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		2051BA092ACFF44C00396490 /* AirportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportListView.swift; sourceTree = "<group>"; };
 		2051BA0B2AD05DD900396490 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		2051BA0D2AD1D2D000396490 /* BackupPilotInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupPilotInstructionsView.swift; sourceTree = "<group>"; };
+		20F590F92AED8F700036AAD5 /* AlternativesAirportsFlightPlanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativesAirportsFlightPlanning.swift; sourceTree = "<group>"; };
 		374D9AC32AA1A06B00A33BA8 /* AeroPlanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AeroPlanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374D9AC62AA1A06B00A33BA8 /* AeroPlanAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPlanAppApp.swift; sourceTree = "<group>"; };
 		374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				2051BA032AB4259400396490 /* ReportView.swift */,
 				2051BA072AB5FF3200396490 /* EmergencyProceduresChecklistView.swift */,
 				2051BA0D2AD1D2D000396490 /* BackupPilotInstructionsView.swift */,
+				20F590F92AED8F700036AAD5 /* AlternativesAirportsFlightPlanning.swift */,
 				2051BA092ACFF44C00396490 /* AirportListView.swift */,
 				2051BA0B2AD05DD900396490 /* SearchBarView.swift */,
 				374D9B202AA27E9400A33BA8 /* ProfileView.swift */,
@@ -285,6 +288,7 @@
 				37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */,
 				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
 				2051BA042AB4259400396490 /* ReportView.swift in Sources */,
+				20F590FA2AED8F700036AAD5 /* AlternativesAirportsFlightPlanning.swift in Sources */,
 				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
 				374D9B1B2AA27E1300A33BA8 /* ContentView.swift in Sources */,
 				374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */,
