@@ -52,7 +52,13 @@
 		37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC82072AA4341D003D1E09 /* DataManager.swift */; };
 		37CC820A2AA4342A003D1E09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */; };
 		37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC820B2AA43470003D1E09 /* AppMode.swift */; };
+		4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16848E2ADBA54F00D44B96 /* MetarView.swift */; };
 		4A7D26962AB95104004FF0CF /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D26952AB95104004FF0CF /* ColorHex.swift */; };
+		4AD825C92AD2143E00279B0A /* ATCPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825C82AD2143E00279B0A /* ATCPractice.swift */; };
+		4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825CA2AD21B0A00279B0A /* ATCView.swift */; };
+		4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */; };
+		4AF8BE852ADB83E0007056C5 /* PreflightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8BE842ADB83E0007056C5 /* PreflightView.swift */; };
+		4AF8BE872ADB87C0007056C5 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8BE862ADB87C0007056C5 /* ToolsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +81,13 @@
 		37CC82072AA4341D003D1E09 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37CC820B2AA43470003D1E09 /* AppMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMode.swift; sourceTree = "<group>"; };
+		4A16848E2ADBA54F00D44B96 /* MetarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarView.swift; sourceTree = "<group>"; };
 		4A7D26952AB95104004FF0CF /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
+		4AD825C82AD2143E00279B0A /* ATCPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCPractice.swift; sourceTree = "<group>"; };
+		4AD825CA2AD21B0A00279B0A /* ATCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCView.swift; sourceTree = "<group>"; };
+		4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCGameViewModel.swift; sourceTree = "<group>"; };
+		4AF8BE842ADB83E0007056C5 /* PreflightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreflightView.swift; sourceTree = "<group>"; };
+		4AF8BE862ADB87C0007056C5 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,25 +147,31 @@
 		374D9AC52AA1A06B00A33BA8 /* AeroPlanApp */ = {
 			isa = PBXGroup;
 			children = (
-				37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */,
 				374D9AC62AA1A06B00A33BA8 /* AeroPlanAppApp.swift */,
-				37CC820B2AA43470003D1E09 /* AppMode.swift */,
-				374D9B1A2AA27E1300A33BA8 /* ContentView.swift */,
-				374D9B242AA27F1600A33BA8 /* ListView.swift */,
-				374D9B262AA27F1A00A33BA8 /* NewPilotView.swift */,
-				37CC82072AA4341D003D1E09 /* DataManager.swift */,
-				37CC82052AA4340D003D1E09 /* Pilot.swift */,
-				374D9B1C2AA27E5000A33BA8 /* HomeView.swift */,
 				374D9B222AA27E9800A33BA8 /* AirView.swift */,
-				37C194C62AB398F100D2A92E /* PersonalMinimumsView.swift */,
-				37C194E52AB6C90100D2A92E /* ExistingConditionsView.swift */,
-				37C194E32AB6BA7800D2A92E /* METAR Decoder.swift */,
-				374D9B282AA27F1F00A33BA8 /* SwiftUIView.swift */,
-				374D9B1E2AA27E8C00A33BA8 /* GroundView.swift */,
-				374D9B202AA27E9400A33BA8 /* ProfileView.swift */,
+				37CC820B2AA43470003D1E09 /* AppMode.swift */,
 				374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */,
-				374D9ACC2AA1A06C00A33BA8 /* Preview Content */,
+				4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */,
+				4AD825C82AD2143E00279B0A /* ATCPractice.swift */,
+				4AD825CA2AD21B0A00279B0A /* ATCView.swift */,
 				4A7D26952AB95104004FF0CF /* ColorHex.swift */,
+				374D9B1A2AA27E1300A33BA8 /* ContentView.swift */,
+				37CC82072AA4341D003D1E09 /* DataManager.swift */,
+				37C194E52AB6C90100D2A92E /* ExistingConditionsView.swift */,
+				37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */,
+				374D9B1E2AA27E8C00A33BA8 /* GroundView.swift */,
+				374D9B1C2AA27E5000A33BA8 /* HomeView.swift */,
+				374D9B242AA27F1600A33BA8 /* ListView.swift */,
+				37C194E32AB6BA7800D2A92E /* METAR Decoder.swift */,
+				374D9B262AA27F1A00A33BA8 /* NewPilotView.swift */,
+				37C194C62AB398F100D2A92E /* PersonalMinimumsView.swift */,
+				37CC82052AA4340D003D1E09 /* Pilot.swift */,
+				374D9ACC2AA1A06C00A33BA8 /* Preview Content */,
+				374D9B202AA27E9400A33BA8 /* ProfileView.swift */,
+				374D9B282AA27F1F00A33BA8 /* SwiftUIView.swift */,
+				4AF8BE842ADB83E0007056C5 /* PreflightView.swift */,
+				4AF8BE862ADB87C0007056C5 /* ToolsView.swift */,
+				4A16848E2ADBA54F00D44B96 /* MetarView.swift */,
 			);
 			path = AeroPlanApp;
 			sourceTree = "<group>";
@@ -271,13 +289,19 @@
 			files = (
 				374D9B272AA27F1A00A33BA8 /* NewPilotView.swift in Sources */,
 				374D9B212AA27E9400A33BA8 /* ProfileView.swift in Sources */,
+				4AF8BE852ADB83E0007056C5 /* PreflightView.swift in Sources */,
 				37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */,
+				4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */,
 				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
 				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
+				4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */,
+				4AD825C92AD2143E00279B0A /* ATCPractice.swift in Sources */,
 				37C194C72AB398F100D2A92E /* PersonalMinimumsView.swift in Sources */,
 				374D9B1B2AA27E1300A33BA8 /* ContentView.swift in Sources */,
 				374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */,
 				37CC82062AA4340D003D1E09 /* Pilot.swift in Sources */,
+				4AF8BE872ADB87C0007056C5 /* ToolsView.swift in Sources */,
+				4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */,
 				374D9B1D2AA27E5000A33BA8 /* HomeView.swift in Sources */,
 				37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */,
 				374D9AC72AA1A06B00A33BA8 /* AeroPlanAppApp.swift in Sources */,

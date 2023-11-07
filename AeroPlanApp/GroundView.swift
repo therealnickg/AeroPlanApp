@@ -35,24 +35,23 @@ struct GroundView: View {
 	
 	var body: some View {
 			NavigationView {
-				// ZStack(color gradient, VStack(title, buttons
 				ZStack{
+					// Background Color
 					LinearGradient(gradient: Gradient(colors:  [Color(hex: 0xE2C285, alpha:0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
-							   startPoint: .bottom,
-							   endPoint: .top)
+						startPoint: .bottom,
+						endPoint: .top)
 						.ignoresSafeArea()
 					
 					VStack {
-						// Ground Mode Title add image font not plain text
-						//Text("Ground Mode")
-							//.font(customFont)
+						// Title Bar
 						Image("gm-title")
 								    .resizable()
 								    .aspectRatio(contentMode: .fit)
 								    .padding(20)
 						
+						// Buttons
 						ForEach(buttons) { button in
-							NavigationLink(destination: getViewForDestination(button.destination)) { // Updated destination
+							NavigationLink(destination: getViewForDestination(button.destination)) { 
 								ZStack{
 									Image(button.imageName)	// Image
 										.resizable()
@@ -75,9 +74,9 @@ struct GroundView: View {
 	    private func getViewForDestination(_ destination: String) -> some View {
 		  switch destination {
 		  case "Pre-flight":
-			return AnyView(PersonalMinimumsView())
+			return AnyView(PreflightView())
 		  case "Tools":
-			return AnyView(GroundView())
+			return AnyView(ToolsView())
 		  default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
 		  }
