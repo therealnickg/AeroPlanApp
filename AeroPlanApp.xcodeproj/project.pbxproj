@@ -54,6 +54,7 @@
 		37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC820B2AA43470003D1E09 /* AppMode.swift */; };
 		4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16848E2ADBA54F00D44B96 /* MetarView.swift */; };
 		4A7D26962AB95104004FF0CF /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D26952AB95104004FF0CF /* ColorHex.swift */; };
+		4AD66BD92AFA1A7000ACB5DA /* TafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD66BD82AFA1A7000ACB5DA /* TafView.swift */; };
 		4AD825C92AD2143E00279B0A /* ATCPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825C82AD2143E00279B0A /* ATCPractice.swift */; };
 		4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825CA2AD21B0A00279B0A /* ATCView.swift */; };
 		4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */; };
@@ -83,6 +84,7 @@
 		37CC820B2AA43470003D1E09 /* AppMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMode.swift; sourceTree = "<group>"; };
 		4A16848E2ADBA54F00D44B96 /* MetarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarView.swift; sourceTree = "<group>"; };
 		4A7D26952AB95104004FF0CF /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
+		4AD66BD82AFA1A7000ACB5DA /* TafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TafView.swift; sourceTree = "<group>"; };
 		4AD825C82AD2143E00279B0A /* ATCPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCPractice.swift; sourceTree = "<group>"; };
 		4AD825CA2AD21B0A00279B0A /* ATCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCView.swift; sourceTree = "<group>"; };
 		4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCGameViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				4AF8BE842ADB83E0007056C5 /* PreflightView.swift */,
 				4AF8BE862ADB87C0007056C5 /* ToolsView.swift */,
 				4A16848E2ADBA54F00D44B96 /* MetarView.swift */,
+				4AD66BD82AFA1A7000ACB5DA /* TafView.swift */,
 			);
 			path = AeroPlanApp;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */,
 				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
 				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
+				4AD66BD92AFA1A7000ACB5DA /* TafView.swift in Sources */,
 				4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */,
 				4AD825C92AD2143E00279B0A /* ATCPractice.swift in Sources */,
 				37C194C72AB398F100D2A92E /* PersonalMinimumsView.swift in Sources */,
@@ -437,7 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AeroPlanApp/Preview Content\"";
-				DEVELOPMENT_TEAM = G9566MW89P;
+				DEVELOPMENT_TEAM = X7V463Q8JF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -466,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AeroPlanApp/Preview Content\"";
-				DEVELOPMENT_TEAM = G9566MW89P;
+				DEVELOPMENT_TEAM = X7V463Q8JF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

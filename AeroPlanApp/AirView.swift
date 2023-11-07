@@ -64,25 +64,25 @@ struct AirView: View {
 	  }
     }
 	// Helper function to determine the view based on destination string
-	    private func getViewForDestination(_ destination: String) -> some View {
-		  switch destination {
-		  case "LostCommunicationView":
-			return AnyView(ATCView())	// Change ToolsView()
-		  case "BackupInstructionsView":
+	private func getViewForDestination(_ destination: String) -> some View {
+		switch destination {
+		case "LostCommunicationView":
 			return AnyView(ToolsView())	// Change ToolsView()
-		  case "ImportantProcedureView":
+		case "BackupInstructionsView":
 			return AnyView(ToolsView())	// Change ToolsView()
-		  case "MovingMapView":
+		case "ImportantProcedureView":
 			return AnyView(ToolsView())	// Change ToolsView()
-		  default:
+		case "MovingMapView":
+			return AnyView(ToolsView())	// Change ToolsView()
+		default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
-		  }
-	    }
+		}
+	}
 }
 
 struct AirView_Previews: PreviewProvider {
     static var previews: some View {
-	  AirView()
+		AirView()
     }
 }
 

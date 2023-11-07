@@ -45,9 +45,9 @@ struct GroundView: View {
 					VStack {
 						// Title Bar
 						Image("gm-title")
-								    .resizable()
-								    .aspectRatio(contentMode: .fit)
-								    .padding(20)
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.padding(20)
 						
 						// Buttons
 						ForEach(buttons) { button in
@@ -71,16 +71,16 @@ struct GroundView: View {
 		}
 	}
 	// Helper function to determine the view based on destination string
-	    private func getViewForDestination(_ destination: String) -> some View {
-		  switch destination {
-		  case "Pre-flight":
+	private func getViewForDestination(_ destination: String) -> some View {
+		switch destination {
+		case "Pre-flight":
 			return AnyView(PreflightView())
-		  case "Tools":
+		case "Tools":
 			return AnyView(ToolsView())
-		  default:
+		default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
-		  }
-	    }
+		}
+	}
 }
 		
 struct GroundView_Previews: PreviewProvider {

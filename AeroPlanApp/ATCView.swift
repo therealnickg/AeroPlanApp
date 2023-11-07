@@ -65,9 +65,9 @@ struct ATCView: View {
 												.foregroundColor(.white)
 												.cornerRadius(8)
 												.overlay(
-														RoundedRectangle(cornerRadius: 8)
-															.stroke(Color.black, lineWidth: 2) // You can adjust lineWidth for border thickness
-													)
+												RoundedRectangle(cornerRadius: 8)
+													.stroke(Color.black, lineWidth: 2) // You can adjust lineWidth for border thickness
+											)
 										}
 									} else {
 									      Spacer() // Empty space for row 2, col 2
@@ -115,8 +115,8 @@ struct ATCView: View {
 		if let questionText = atcPractice.currentQuestion?.text {
 			let speechUtterance = AVSpeechUtterance(string: questionText)
 			speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-			speechUtterance.rate = 2.00
-			speechUtterance.pitchMultiplier = 0.86
+			//speechUtterance.rate = 1
+			//speechUtterance.pitchMultiplier = 0.86
 			speechUtterance.volume = 1
 			speechSynthesizer.speak(speechUtterance)
 		}

@@ -4,6 +4,8 @@
 //
 //  Created by Jovanni Garcia on 09/14/23.
 //
+// let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
+// let apiUrl = "https://aeroapi.flightaware.com/aeroapi/"
 
 import SwiftUI
 
@@ -11,6 +13,7 @@ class METARViewModel: ObservableObject {
     @Published var airportCode = ""
     @Published var metarData = ""
     @Published var isFetching = false
+	@Published var latestObservation: Observation?
 
     func getMETAR() {
 	  isFetching = true
@@ -28,36 +31,40 @@ class METARViewModel: ObservableObject {
 	  request.allHTTPHeaderFields = authHeader
 
 	  let task = URLSession.shared.dataTask(with: request) { data, response, error in
-		DispatchQueue.main.async {
-		    self.isFetching = false
-		}
+		  DispatchQueue.main.async {
+			  self.isFetching = false
+		  }
 
-		if let error = error {
-		    print("Error: \(error)")
-		    return
-		}
+		  if let error = error {
+			  print("Error: \(error)")
+			  return
+		  }
 
-		guard let data = data else {
-		    print("No data received")
-		    return
-		}
+		  guard let data = data else {
+			  print("No data received")
+			  return
+		  }
+		  
+		  // Print the raw JSON string for debugging
+		  let rawJSONString = String(data: data, encoding: .utf8)
+		  print("Received JSON: \(rawJSONString ?? "Invalid JSON")")
 
-		do {
-		    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-			 let metar = json["raw_data"] as? String {
-			  DispatchQueue.main.async {
-				self.metarData = metar
-			  }
-		    } else {
-			    print("Failed to parse JSON or extract METAR data")
-					print("Received JSON: \(String(data: data, encoding: .utf8) ?? "Unable to convert to string")")
-				  }
-		} catch {
-		    print("Error parsing JSON: \(error)")
+		  do {
+			  let decoder = JSONDecoder()
+					let metarResponse = try decoder.decode(METARResponse.self, from: data)
+				
+					if let latestObservation = metarResponse.observations.first {
+						DispatchQueue.main.async {
+							self.latestObservation = latestObservation
+						}
+					} else {
+						print("No observation data found")
+					}
+				} catch {
+					print("Error decoding JSON: \(error)")
+				}
 		}
-	  }
-
-	  task.resume()
+		task.resume()
     }
 }
 
@@ -66,9 +73,9 @@ struct METARView: View {
 	
 	var body: some View {
 		NavigationView {
-			VStack {
-				TextField("Enter Airport Code", text: $viewModel.airportCode)
-					.padding()
+			VStack(spacing: 0) {
+				TextField("Enter Airport ICAO Code", text: $viewModel.airportCode)
+					.padding(.horizontal, 40)
 					.textFieldStyle(RoundedBorderTextFieldStyle())
 				
 				Button(action: {
@@ -76,76 +83,105 @@ struct METARView: View {
 				}) {
 					Text("Get METAR")
 				}
-				.padding()
+				.padding(.vertical, 5) // Reduce the top padding for the button
 				
 				if viewModel.isFetching {
 					ProgressView("Fetching METAR...")
 						.padding()
 				} else {
-					if let metarDetails = parseMETARDetails(from: viewModel.metarData) {
-						METARDetailsView(metarDetails: metarDetails)
-					} else {
-						Text("Unable to extract METAR details")
-							.padding()
+					ScrollView {
+						if let observation = viewModel.latestObservation {
+							METARDetailView(observation: observation)
+						} else {
+							// Display the latest METAR data in a Text view
+							Text(viewModel.metarData)
+								.padding()
+						}
 					}
 				}
 			}
-			.padding()
-			.navigationTitle("METAR Viewer")
+			.navigationTitle("Meterological Aerodrome Report")
+			.navigationBarTitleDisplayMode(.inline)
+			.padding(.top, 30) // Reduce the top padding for the entire VStack
 		}
 	}
-	
-	private func parseMETARDetails(from metarData: String) -> METARDetails? {
-		let jsonData = Data(metarData.utf8)
-		
-		do {
-			let decoder = JSONDecoder()
-			let metarResponse = try decoder.decode(METARResponse.self, from: jsonData)
+}
+
+struct METARDetailView: View {
+	let observation: Observation
+
+	var body: some View {
+		let columns = [
+			GridItem(.flexible()),
+			GridItem(.flexible())
+		]
+
+		LazyVGrid(columns: columns, alignment: .leading) {
+			Text("ICAO Code:")
+			Text(observation.airport_code)
 			
-			if let observation = metarResponse.observations.first {
-				return METARDetails(
-					temperature: observation.temp_air,
-					windDirection: observation.wind_direction,
-					windSpeed: observation.wind_speed,
-					visibility: observation.visibility
-				)
-			} else {
-				print("No observation data found")
+			Text("Cloud friendly:")
+			Text("\(observation.cloud_friendly)")
+			// Add more fields as needed
+	
+			if let firstCloud = observation.clouds.first {
+				if let altitude = firstCloud.altitude {
+					Text("Altitude:")
+					Text("\(altitude) feet")
+				} else {
+					Text("Altitude:")
+					Text("N/A")
+				}
+				Text("Symbol:")
+				Text(firstCloud.symbol)
+				Text("Type:")
+				Text(firstCloud.type)
 			}
-		} catch {
-			print("Error decoding JSON: \(error)")
+			
+			Text("Pressure:")
+			Text("\(String(format: "%.2f", observation.pressure)) \(observation.pressure_units) \(String(format: "%.2f", observation.pressure * 33.86389)) hPa")
+			
+			Text("Temperature:")
+			Text("\(observation.temp_air)°C")
+			
+			Text("Dewpoint:")
+			Text("\(observation.temp_dewpoint)°C")
+			
+			Text("Temperature Perceived:")
+			Text("\(observation.temp_perceived)")
+			
+			Text("Relative Humidity:")
+			Text("\(observation.relative_humidity)")
+			
+			Text("Visibility:")
+			Text("\(observation.visibility) \(observation.visibility_units)")
+			
+			Text("Wind Direction:")
+			Text("\(observation.wind_direction)°")
+			
+			Text("Wind Speed:")
+			Text("\(observation.wind_speed) \(observation.wind_units)")
+			
+			Text("Wind Gust Speed:")
+			Text("\(observation.wind_speed_gust) \(observation.wind_units)")
+			
+			Text("Time:")
+			Text(formatDate(from: observation.time))
+			
+			Text("Raw Metar Code:")
+				.alignmentGuide(.firstTextBaseline) { context in
+					context[.top]
+				}
+			Text(observation.raw_data)
+				.fixedSize(horizontal: false, vertical: true)
 		}
-		
-		return nil
+		.padding(.top)
+		.padding(30)
 	}
-}
-
-struct METARDetailsView: View {
-    let metarDetails: METARDetails
-
-    var body: some View {
-	  VStack(alignment: .leading) {
-		Text("Temperature: \(metarDetails.temperature)°C")
-		Text("Wind: \(metarDetails.windDirection)° at \(metarDetails.windSpeed) knots")
-		Text("Visibility: \(metarDetails.visibility) miles")
-	  }
-	  .padding()
-    }
-}
-
-struct METARDetails {
-    let temperature: Int
-    let windDirection: Int
-    let windSpeed: Int
-    let visibility: Int
 }
 
 struct METARResponse: Decodable {
     let observations: [Observation]
-	
-	private enum CodingKeys: String, CodingKey {
-			case observations = "weather"
-		}
 }
 
 struct Observation: Decodable {
@@ -174,4 +210,31 @@ struct Cloud: Decodable {
 	let altitude: Int?
 	let symbol: String
 	let type: String
+}
+
+// Time Format
+/*
+ The "T" in the timestamp "2023-11-07T05:53:00Z" is a delimiter that separates the date and time components in an ISO 8601 formatted string. ISO 8601 is an international standard for date and time representations, and the format is widely used because it is well-defined and unambiguous.
+ The "Z" stands for "Zulu time" and indicates that the time is given in UTC (Coordinated Universal Time), without any offset for time zones. "Zulu" is the radio call sign for the letter "Z" used by the military and in aviation and maritime communications.
+
+ */
+func formatDate(from isoDate: String) -> String {
+	let isoFormatter = ISO8601DateFormatter()
+	isoFormatter.formatOptions = [.withInternetDateTime] // Adjusted to remove fractional seconds
+		
+	if let date = isoFormatter.date(from: isoDate) {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy HH:mm:ss 'UTC'"
+		dateFormatter.locale = Locale(identifier: "en_US_POSIX") // Use English abbreviations
+		dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+		return dateFormatter.string(from: date)
+	} else {
+		return "Invalid date"
+	}
+}
+
+struct METARView_Previews: PreviewProvider {
+	static var previews: some View {
+		METARView(viewModel: METARViewModel())
+	}
 }
