@@ -4,7 +4,7 @@
 //
 //  Created by Jovanni Garcia on 09/14/23.
 //
-// let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
+// let apiKey = "use nicks api key"
 // let apiUrl = "https://aeroapi.flightaware.com/aeroapi/"
 
 import SwiftUI
@@ -18,7 +18,7 @@ class METARViewModel: ObservableObject {
     func getMETAR() {
 	  isFetching = true
 
-	  let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
+	  let apiKey = "use nicks api key"
 	  let apiUrl = "https://aeroapi.flightaware.com/aeroapi/"
 
 	  let authHeader = ["x-apikey": apiKey]
