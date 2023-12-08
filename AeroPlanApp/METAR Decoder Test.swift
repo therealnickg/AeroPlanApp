@@ -15,7 +15,6 @@ func getMETAR() -> String {
     let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
     let apiUrl = "https://aeroapi.flightaware.com/aeroapi/"
 
-    let payload = ["max_pages": 1]
     let authHeader = ["x-apikey": apiKey]
 
     let urlString = apiUrl + "airports/KLGB/weather/observations"
@@ -40,7 +39,7 @@ func getMETAR() -> String {
         
         do {
             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(json)
+                //print(json)
             } else {
                 print("Failed to parse JSON")
             }
