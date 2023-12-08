@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-var airportCode = ""
+var airportMETARCode = ""
 
 func getMETAR() -> String {
     let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
@@ -21,6 +21,8 @@ func getMETAR() -> String {
     let urlString = apiUrl + "airports/KLGB/weather/observations"
     let url = URL(string: urlString)!
 
+    //print(url)
+    
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = authHeader
@@ -56,9 +58,9 @@ struct METAR_Decoder: View {
         Text(getMETAR())
     }
 }
-/*
+
 struct METAR_Decoder_Previews: PreviewProvider {
     static var previews: some View {
         METAR_Decoder()
     }
-}*/
+}

@@ -52,6 +52,7 @@
 		37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC82072AA4341D003D1E09 /* DataManager.swift */; };
 		37CC820A2AA4342A003D1E09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */; };
 		37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC820B2AA43470003D1E09 /* AppMode.swift */; };
+		37F393CE2B0404F700C55E88 /* SuggestedAltitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F393CD2B0404F700C55E88 /* SuggestedAltitudeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		37CC82072AA4341D003D1E09 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37CC820B2AA43470003D1E09 /* AppMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMode.swift; sourceTree = "<group>"; };
+		37F393CD2B0404F700C55E88 /* SuggestedAltitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAltitudeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				37C194E52AB6C90100D2A92E /* ExistingConditionsView.swift */,
 				37C194E32AB6BA7800D2A92E /* METAR Decoder Test.swift */,
 				3743DD0B2AD0C804005FC9F8 /* CurrencyTracker.swift */,
+				37F393CD2B0404F700C55E88 /* SuggestedAltitudeView.swift */,
 				374D9B1E2AA27E8C00A33BA8 /* GroundView.swift */,
 				374D9B202AA27E9400A33BA8 /* ProfileView.swift */,
 				374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 				374D9B1B2AA27E1300A33BA8 /* ContentView.swift in Sources */,
 				3743DD0C2AD0C804005FC9F8 /* CurrencyTracker.swift in Sources */,
 				374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */,
+				37F393CE2B0404F700C55E88 /* SuggestedAltitudeView.swift in Sources */,
 				37CC82062AA4340D003D1E09 /* Pilot.swift in Sources */,
 				374D9B1D2AA27E5000A33BA8 /* HomeView.swift in Sources */,
 				37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */,
