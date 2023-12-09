@@ -100,6 +100,16 @@ struct HomeView: View {
                                 EmptyView()
                             }
                         }
+                        else if appMode == .logs {
+                                NavigationLink(destination: LogsView(), tag: .logs, selection: appModeBinding) {
+                                    EmptyView()
+                                }
+                            }
+                        else if appMode == .lostCom {
+                            NavigationLink(destination: LostComView(), tag: .lostCom, selection: appModeBinding) {
+                                EmptyView()
+                            }
+                        }
                         else if appMode == .GAPC {
                             NavigationLink(destination: GAPCView(), tag: .GAPC, selection: appModeBinding){
                                 EmptyView()
