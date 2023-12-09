@@ -119,56 +119,109 @@ struct HomeView: View {
 
                         
                     }
+                                        Spacer()
+                    HStack{
+                        VStack{
+                            Button(action: {
+                                appMode = .ground
+                            }) {
+                                Image("Ground")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            Text("Ground")
+
+                        }
+                        
+                        VStack{
+                            Button(action: {
+                                appMode = .air
+                            }) {
+                                Image("Air")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5, maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            
+                            Text("Air")
+                            
+                        }
+
+                    }
+                    Spacer()
+    
+                    HStack{
+                        VStack{
+                            Button(action: {
+                                appMode = .pReview
+                            }) {
+                                Image("Notes")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                                
+                            }
+                            Text("Notes")
+                        }
+                        VStack{
+                            Button(action: {
+                                appMode = .logs
+                            }) {
+                                Image("Logs")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            Text("Logs")
+                        }
+                    }
+                    
+                    Spacer()
+                  
                     
                     HStack{
-                        Button(action: {
-                            appMode = .ground
-                        }) {
-                            Image("Ground")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
-                                .background(Color(red:171/255, green:187/255,blue: 214/255))
-                                .cornerRadius(50)
-                                .padding(10)
+                        VStack{
+                            Button(action: {
+                                appMode = .lostCom
+                            }) {
+                                Image("LostCom")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                            }
+                            Text("LostCom")
+                        VStack{
+                            Button(action: {
+                                appMode = .GAPC
+                            }) {
+                                Image("Check.svg")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            Text("GAPC")
                         }
-                        
-                        Button(action: {
-                            appMode = .air
-                        }) {
-                            Image("Air")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
-                                .background(Color(red:171/255, green:187/255,blue: 214/255))
-                                .cornerRadius(50)
-                                .padding(10)
-                        }
-                        Button(action: {
-                            appMode = .pReview
-                        }) {
-                            Image("Notes")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
-                                .background(Color(red:171/255, green:187/255,blue: 214/255))
-                                .cornerRadius(50)
-                                .padding(10)
-                        }
-                        Button(action: {
-                            appMode = .GAPC
-                        }) {
-                            Image("Check.svg")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
-                                .background(Color(red:171/255, green:187/255,blue: 214/255))
-                                .cornerRadius(50)
-                                .padding(10)
-                        }
-                        
-                        
                     }
+                    Spacer()
+
                 }
                 .background(Color.white)
                 .frame(width: geometry.size.width)
@@ -230,6 +283,7 @@ struct HomeView: View {
         }
     }
     
+}
 }
     
 
