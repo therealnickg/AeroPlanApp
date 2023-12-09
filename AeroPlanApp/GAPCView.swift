@@ -49,6 +49,10 @@ protocol IdentifiableItem: Identifiable{
     var id: UUID {get}
 }
 
+//we create a wrapper class in order to conform to Codable for UserDefault Save
+//creating the wrapper class you need to change the foreach loop within the view (just a note)
+
+
 
 
 
@@ -62,8 +66,25 @@ class ListData: ObservableObject{
         PickerlistItem2(title: "Control Lock", values: ["On", "Off"], selectedValue: "On"),
         PickerlistItem2(title: "Low Fuel Lights", values: ["On", "Off"], selectedValue: "On"),
         PickerlistItem(title: "Flaps", values: ["Up", "Down"], selectedValue: "Up"),
-        PickerlistItem(title: "Weather", values: ["Clear", "Windy", "Overcast", "Rainy", "Stormy"], selectedValue: "Clear")
+        PickerlistItem(title: "Weather", values: ["Clear", "Windy", "Overcast", "Rainy", "Stormy"], selectedValue: "Clear"),
+        
+        
     ]
+    
+    @Published var itemList2: [Any] = [
+        PickerlistItem2(title: "Fuel Quantity", values: ["0%", "25%", "50%", "75", "100%"], selectedValue: "0%"),
+        PickerlistItem(title: "Fuel Quality", values: ["Bad", "Good", "Great"], selectedValue: "Bad"),
+        TogglelistItem(name: "Exhaust System"),
+        TogglelistItem(name: "Propeller & Air Intake"),
+        TogglelistItem(name: "Surface & Control"),
+        TogglelistItem(name: "Pitot Ports"),
+        TogglelistItem(name: "Static Ports"),
+        TogglelistItem(name: "Gear/Tires/Brakes"),
+        TogglelistItem(name: "Antennas / Stall Ind"),
+        TogglelistItem(name: "Ties/Chocks/Towbar"),
+        
+        
+        ]
     
     
     
@@ -80,16 +101,27 @@ class ListData: ObservableObject{
             }
         }
     }
+    //reset the itemList2
+    func resetItems2() {
+        for index in itemList2.indices {
+            if let toggleItem = itemList2[index] as? TogglelistItem {
+                toggleItem.isChecked = false // Reset toggle items
+            } else if let pickerItem = itemList2[index] as? PickerlistItem {
+                pickerItem.selectedValue = pickerItem.values.first ?? "" // Reset picker items
+            } else if let pickerItem2 = itemList2[index] as? PickerlistItem2 {
+                pickerItem2.selectedValue = pickerItem2.values.first ?? "" // Reset picker items
+            }
+        }
+    }
     
-    
-    /*//User Default Save function to persist data
+   /* //User Default Save function to persist data
     func saveUserDefault(){
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(itemList){
             UserDefaults.standard.set(encoded, forKey: "ItemListKey")
         }
-    }
-    */
+    }*/
+    
     
 }
 
@@ -99,32 +131,28 @@ class ListData: ObservableObject{
 struct GAPCView: View {
     //object instance of ChecklistData the object holds the list of objects that will be displayed in the GAPCview
     @ObservedObject var  checkList = ListData()
+    @State private var showAlert = false
     
     var body: some View {
         NavigationView{
             ScrollView{
                 VStack(alignment: .leading){
                     Text("General Aircraft Preflight Checklist")
-                        .padding(10)
+                        .padding(15)
                         .font(.largeTitle)
-                        .border(Color.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.white)
+                                .frame(width: 500, height: 100)
+                                .padding(10)
+                        )
+                        .offset(y:25)
                     Spacer()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        
                     
-                    //This is the reset button that will reset all values in the UI
-                        Button(action: {
-                            checkList.resetItems()
-                        }){
-                            Text("Reset")
-                                .foregroundColor(.white)
-                                
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color.red)
-                                        .frame(width: 70, height: 40)
-                                )
-                        }
-                        .offset(x:320, y:-60)
+                    
+
                         
                     
                     
@@ -140,7 +168,9 @@ struct GAPCView: View {
                         Text("Initial")
                             .foregroundColor(.white)
                             .font(.system(size:30))
+                            
                     }
+                    
             
                     
                         
@@ -170,9 +200,49 @@ struct GAPCView: View {
                             .foregroundColor(.white)
                             .font(.system(size:30))
                     }
+                    ForEach(checkList.itemList2.indices, id: \.self) { index in
+                        if let toggleItem = checkList.itemList2[index] as? TogglelistItem {
+                            ToggleListItemView(item: toggleItem)
+                        } else if let pickerItem = checkList.itemList2[index] as? PickerlistItem {
+                            PickerlistItemView(item2: pickerItem)
+                        }
+                        else if let pickerItem2 = checkList.itemList2[index] as? PickerlistItem2 {
+                            PickerlistItem2View(item3: pickerItem2)
+                        }
+                    }
+                    
+                    //This is the reset button that will reset all values in the UI
+                        Button(action: {
+                            showAlert = true
+                            
+                        }){
+                            Text("Reset")
+                                .foregroundColor(.white)
+                                
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(Color.red)
+                                        .frame(width: 300, height: 40)
+                                )
+                        }
+                        .offset(x: 173, y:10)
+                        .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("You are resetting the Preflight Checklist!"),
+                                message: Text("Confirm Reset?"),
+                                primaryButton: .default(Text("OK"), action: {
+                                    // Handle the OK button action here
+                                    showAlert = false // Close the alert
+                                    checkList.resetItems()
+                                    checkList.resetItems2()
+                                }),
+                                secondaryButton: .cancel(Text("Cancel"))
+                            )
+                        }
                     
                 }
             }
+            .background(Color.white.opacity(0.2))
         }
     }
 }
@@ -231,13 +301,13 @@ struct PickerlistItem2View : View{
                 }
             }
             .pickerStyle(DefaultPickerStyle())
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .offset(y:-40)
+            .frame(maxWidth: .infinity, maxHeight: 1, alignment: .trailing)
+            .offset(y:-27)
             
             
         }
         .padding()
-        Spacer(minLength: -40)
+        Spacer(minLength: 0)
     }
 }
 
