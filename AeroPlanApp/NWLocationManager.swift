@@ -8,7 +8,7 @@
 import CoreLocation
 import Combine
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+class NWLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 	@Published var currentLocation: CLLocationCoordinate2D?
 	private let locationManager = CLLocationManager()
 

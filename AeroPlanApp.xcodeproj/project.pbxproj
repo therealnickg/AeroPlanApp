@@ -55,7 +55,7 @@
 		4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16848E2ADBA54F00D44B96 /* MetarView.swift */; };
 		4A4638942B0B2A83003D152A /* NearestWaypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4638932B0B2A83003D152A /* NearestWaypoint.swift */; };
 		4A5AAD662B0B621300EA4C8A /* CompassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */; };
-		4A5AAD682B0B6BF700EA4C8A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AAD672B0B6BF700EA4C8A /* LocationManager.swift */; };
+		4A5AAD682B0B6BF700EA4C8A /* NWLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AAD672B0B6BF700EA4C8A /* NWLocationManager.swift */; };
 		4A7D26962AB95104004FF0CF /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D26952AB95104004FF0CF /* ColorHex.swift */; };
 		4AD66BD92AFA1A7000ACB5DA /* TafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD66BD82AFA1A7000ACB5DA /* TafView.swift */; };
 		4AD825C92AD2143E00279B0A /* ATCQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825C82AD2143E00279B0A /* ATCQuestion.swift */; };
@@ -88,7 +88,7 @@
 		4A16848E2ADBA54F00D44B96 /* MetarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarView.swift; sourceTree = "<group>"; };
 		4A4638932B0B2A83003D152A /* NearestWaypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestWaypoint.swift; sourceTree = "<group>"; };
 		4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassViewModel.swift; sourceTree = "<group>"; };
-		4A5AAD672B0B6BF700EA4C8A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4A5AAD672B0B6BF700EA4C8A /* NWLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWLocationManager.swift; sourceTree = "<group>"; };
 		4A7D26952AB95104004FF0CF /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		4AD66BD82AFA1A7000ACB5DA /* TafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TafView.swift; sourceTree = "<group>"; };
 		4AD825C82AD2143E00279B0A /* ATCQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCQuestion.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 				4AD66BD82AFA1A7000ACB5DA /* TafView.swift */,
 				4A4638932B0B2A83003D152A /* NearestWaypoint.swift */,
 				4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */,
-				4A5AAD672B0B6BF700EA4C8A /* LocationManager.swift */,
+				4A5AAD672B0B6BF700EA4C8A /* NWLocationManager.swift */,
 			);
 			path = AeroPlanApp;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 				4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */,
 				4AD825C92AD2143E00279B0A /* ATCQuestion.swift in Sources */,
 				4A5AAD662B0B621300EA4C8A /* CompassViewModel.swift in Sources */,
-				4A5AAD682B0B6BF700EA4C8A /* LocationManager.swift in Sources */,
+				4A5AAD682B0B6BF700EA4C8A /* NWLocationManager.swift in Sources */,
 				37C194C72AB398F100D2A92E /* PersonalMinimumsView.swift in Sources */,
 				374D9B1B2AA27E1300A33BA8 /* ContentView.swift in Sources */,
 				374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */,

@@ -14,7 +14,7 @@ struct NearestWaypoint: View {
 	@State private var searchText = ""
 	@State private var results = [MKMapItem]()
 	
-	@StateObject var locationManager = LocationManager()
+	@StateObject var locationManager = NWLocationManager()
 	let directionLabels: [String] = []
 	
 	var body: some View {
