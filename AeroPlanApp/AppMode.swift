@@ -14,5 +14,6 @@ enum AppMode: Hashable{
     case logs
     case pReview
     case GAPC
+    case lostCom
     
 }
