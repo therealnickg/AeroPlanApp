@@ -1,30 +1,49 @@
-//
-//  FlightLogBook.swift
-//  AeroPlan
-//
-//  Created by Nguyen Vo on 9/16/23.
-//
-
 import SwiftUI
 import Foundation
 
-// Flight LogBook object
-class FlightLogEntry: ObservableObject, Equatable{
+class FlightLogEntry: ObservableObject, Equatable, Identifiable {
     
-    @Published var ID = UUID() // unique ID for each log
-    @Published var date = Date()
-    @Published var departureAirport = ""
-    @Published var arrivalAirport = ""
-    @Published var altitude: Double = 0.0 // Altitude in feet
-    @Published var speed: Double = 0.0 // in knots
-    @Published var distance: Double = 0.0 // in miles
-    @Published var flightTime: TimeInterval = 0.0
-    @Published var landings: Int = 0 // # of landings
-    @Published var instrumentApproaches: Int = 0 // # of instrument approaches
-    @Published var notes: String? = nil
+    let ID: UUID
+    @Published var date: Date
+    @Published var departureAirport: String
+    @Published var arrivalAirport: String
+    @Published var altitude: Double
+    @Published var speed: Double
+    @Published var distance: Double
+    @Published var flightTime: Double
+    @Published var landings: Int
+    @Published var instrumentApproaches: Int
+    @Published var notes: String?
+
+    // Initialize with default values
+    init(ID: UUID = UUID()) {
+        self.ID = ID
+        self.date = Date()
+        self.departureAirport = ""
+        self.arrivalAirport = ""
+        self.altitude = 0.0
+        self.speed = 0.0
+        self.distance = 0.0
+        self.flightTime = 0.0
+        self.landings = 0
+        self.instrumentApproaches = 0
+        self.notes = nil
+    }
     
-    init(ID: UUID = UUID(), date: Date, departureAirport: String, arrivalAirport: String, altitude: Double, speed: Double, distance: Double, flightTime: TimeInterval, landings: Int, instrumentApproaches: Int, notes: String?) {
-        
+    // Initialize with custom values
+    init(
+        ID: UUID = UUID(),
+        date: Date,
+        departureAirport: String,
+        arrivalAirport: String,
+        altitude: Double,
+        speed: Double,
+        distance: Double,
+        flightTime: Double,
+        landings: Int,
+        instrumentApproaches: Int,
+        notes: String?
+    ) {
         self.ID = ID
         self.date = date
         self.departureAirport = departureAirport
@@ -36,11 +55,11 @@ class FlightLogEntry: ObservableObject, Equatable{
         self.landings = landings
         self.instrumentApproaches = instrumentApproaches
         self.notes = notes
-      }
+        
+    }
     
     // overloaded == comparison
     static func == (lhs: FlightLogEntry, rhs: FlightLogEntry) -> Bool {
-          return lhs.ID == rhs.ID
+        return lhs.ID == rhs.ID
     }
 }
-
