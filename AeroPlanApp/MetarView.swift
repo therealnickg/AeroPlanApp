@@ -72,8 +72,7 @@ struct METARView: View {
 	@ObservedObject var viewModel = METARViewModel()
 	
 	var body: some View {
-		NavigationView {
-			VStack(spacing: 0) {
+			VStack(spacing: 20) {
 				// TextField
 				TextField("Enter Airport ICAO Code", text: $viewModel.airportCode)
 					.cornerRadius(20) // Optional: if you want rounded corners
@@ -113,7 +112,7 @@ struct METARView: View {
 			.background(Image("metar-background-img")
 				.resizable()
 				.ignoresSafeArea())
-		}
+		
 	}
 }
 

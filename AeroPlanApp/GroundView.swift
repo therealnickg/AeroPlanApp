@@ -34,42 +34,41 @@ struct GroundView: View {
 	let customFont = Font.custom("Geologica-Black", size: 49)
 	
 	var body: some View {
-			NavigationView {
-				ZStack{
-					// Background Color
-					LinearGradient(gradient: Gradient(colors:  [Color(hex: 0xE2C285, alpha:0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
-						startPoint: .bottom,
-						endPoint: .top)
-						.ignoresSafeArea()
-					
-					VStack {
-						// Title Bar
-						Image("gm-title")
-							.resizable()
-							.aspectRatio(contentMode: .fit)
-							.padding(20)
-						
-						// Buttons
-						ForEach(buttons) { button in
-							NavigationLink(destination: getViewForDestination(button.destination)) { 
-								ZStack{
-									Image(button.imageName)	// Image
-										.resizable()
-										.aspectRatio(contentMode: .fit)
-										.cornerRadius(10)
-									
-									Text(button.title)
-										.foregroundColor(button.fontColor)
-										.padding(.trailing, 100) // move text left by adding space to the right
-										.font(customFont)
-								}
-							}
+		ZStack{
+			// Background Color
+			LinearGradient(gradient: Gradient(colors:  [Color(hex: 0xE2C285, alpha:0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
+				startPoint: .bottom,
+				endPoint: .top)
+				.ignoresSafeArea()
+			
+			VStack {
+				// Title Bar
+				Image("gm-title")
+					.resizable()
+					.aspectRatio(contentMode: .fit)
+					.padding(20)
+				
+				// Buttons
+				ForEach(buttons) { button in
+					NavigationLink(destination: getViewForDestination(button.destination)) {
+						ZStack{
+							Image(button.imageName)	// Image
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.cornerRadius(10)
+							
+							Text(button.title)
+								.foregroundColor(button.fontColor)
+								.padding(.trailing, 100) // move text left by adding space to the right
+								.font(customFont)
+						}
 					}
-					.padding(10)	// Space buttons from side edges
 				}
+				.padding(10)	// Space buttons from side edges
 			}
 		}
 	}
+	
 	// Helper function to determine the view based on destination string
 	private func getViewForDestination(_ destination: String) -> some View {
 		switch destination {

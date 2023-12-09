@@ -107,7 +107,7 @@ struct HomeView: View {
                                 }
                             }
                         else if appMode == .lostCom {
-                            NavigationLink(destination: LostComView(), tag: .lostCom, selection: appModeBinding) {
+                            NavigationLink(destination: LogsView(), tag: .lostCom, selection: appModeBinding) {
                                 EmptyView()
                             }
                         }

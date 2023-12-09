@@ -27,7 +27,6 @@ struct ToolsView: View {
 	let customTitleFont = Font.custom("", size: 50)
     
     var body: some View {
-	  NavigationView {
 		ZStack {
 			// Background Color
 			LinearGradient(gradient: Gradient(colors: [Color(hex: 0xE2C285, alpha: 0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
@@ -62,13 +61,13 @@ struct ToolsView: View {
 								  .padding(.leading, 250) // left side spacing from center
 						  }
 					  }
-				 }
+				  }
 			  }
 			  .padding(10) // Add padding around the VStack to center it
 		    }
 		}
-	  }
-    }
+	}
+    
 	// Helper function to determine the view based on destination string
 	    private func getViewForDestination(_ destination: String) -> some View {
 		  switch destination {

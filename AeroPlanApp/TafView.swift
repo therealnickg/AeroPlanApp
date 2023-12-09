@@ -66,8 +66,7 @@ struct TafView: View {
 	@ObservedObject var viewModel = TAFViewModel()
 	
 	var body: some View {
-		NavigationView {
-			VStack(spacing: 0) {
+			VStack(spacing: 20) {
 				// TextField
 				TextField("Enter Airport ICAO Code", text: $viewModel.airportCode)
 					.cornerRadius(20) // Optional: if you want rounded corners
@@ -108,7 +107,7 @@ struct TafView: View {
 			.background(Image("metar-background-img")
 				.resizable()
 				.ignoresSafeArea())
-		}
+		
 	}
 }
 
