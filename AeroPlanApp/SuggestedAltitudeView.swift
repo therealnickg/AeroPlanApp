@@ -129,6 +129,30 @@ func parseAirportName(jsonString: String) -> String {
     return "Error in Parsing"
 }
 
+// THIS IS EVERYTHING RELATED TO PARSING THE NAME OF THE AIRPORT
+func parseAirportCoords(jsonString: String) -> (Double, Double) {
+    if let jsonData = jsonString.data(using: .utf8) {
+        do {
+            // Deserialize JSON data into a Swift dictionary
+            if let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+                // Access latitude and longitude from the dictionary
+                if let latitude = jsonDictionary["latitude"] as? Double,
+                   let longitude = jsonDictionary["longitude"] as? Double {
+                    return (latitude, longitude)
+                } else {
+                    //print("Latitude and/or Longitude not found in the JSON.")
+                }
+            }
+        } catch {
+            print("Error deserializing JSON: \(error)")
+        }
+    } else {
+        print("Failed to convert JSON string to Data.")
+    }
+    return (0, 0)
+}
+
+// Some conversion methods
 func degreesToRadians(_ degrees: Double) -> Double {
     return degrees * Double.pi / 180.0
 }
@@ -137,8 +161,10 @@ func radiansToDegrees(_ radians: Double) -> Double {
     return radians * 180.0 / .pi
 }
 
+// Find the shortest distance from one coordinate pair to another
+// on the surface of the earth
 func haversineDistance(apt1lat: Double, apt1long: Double, apt2lat: Double, apt2long: Double) -> Double {
-    let R = 3440.065 // Earth radius in miles
+    let R = 3440.065 // Earth radius in nautical miles
     
     let deltaLat = degreesToRadians(apt2lat - apt1lat)
     let deltaLon = degreesToRadians(apt2long - apt1long)
@@ -150,7 +176,7 @@ func haversineDistance(apt1lat: Double, apt1long: Double, apt2lat: Double, apt2l
     let c = 2 * atan2(sqrt(a), sqrt(1 - a))
     
     let distance = R * c // Distance in miles
-    //let roundedMiles = ceil(distance * 10) / 10
+    
     return distance
 }
 
@@ -170,23 +196,38 @@ func initialBearing(apt1lat: Double, apt1long: Double, apt2lat: Double, apt2long
     return (radiansToDegrees(bearing) + 360.0).truncatingRemainder(dividingBy: 360.0)
 }
 
+// Calculate the coordinates of the interval along the line
 func calculateDestinationPoint(startLat: Double, startLong: Double, bearing: Double, distance: Double) -> (Double, Double) {
-    let R = 3440.065  // Earth's radius in nautical miles
+    // Earth radius in nautical miles
+    let earthRadiusNM = 3440.065
 
-    let lat1 = degreesToRadians(startLat)
-    let lon1 = degreesToRadians(startLong)
+    // Convert initial bearing to radians
+    let bearingRad = bearing * Double.pi / 180.0
 
-    let lat2 = asin(sin(lat1) * cos(distance / R) + cos(lat1) * sin(distance / R) * cos(bearing))
-    let lon2 = lon1 + atan2(sin(bearing) * sin(distance / R) * cos(lat1), cos(distance / R) - sin(lat1) * sin(lat2))
+    // Convert distance to radians
+    let distanceRad = distance / earthRadiusNM
 
-    return (radiansToDegrees(lat2), radiansToDegrees(lon2))
+    // Convert starting point coordinates to radians
+    let startLatRad = startLat * Double.pi / 180.0
+    let startLonRad = startLong * Double.pi / 180.0
+
+    // Calculate destination point coordinates in radians
+    let destLatRad = asin(sin(startLatRad) * cos(distanceRad) + cos(startLatRad) * sin(distanceRad) * cos(bearingRad))
+    let destLonRad = startLonRad + atan2(sin(bearingRad) * sin(distanceRad) * cos(startLatRad),
+                                          cos(distanceRad) - sin(startLatRad) * sin(destLatRad))
+
+    // Convert destination point coordinates back to degrees
+    let destLat = destLatRad * 180.0 / Double.pi
+    let destLon = destLonRad * 180.0 / Double.pi
+    return (destLat, destLon)
 }
 
-func getMaxAltitude(airport1: String, airport2: String) -> String {
-    let lat1 = 33.81769943
-    let long1 = -118.1520004
-    let lat2 = 34.21369934082031
-    let long2 = -119.09400177001953
+// Returns the Maximum altitude between two airports
+func getMaxAltitude(airport1: (Double, Double), airport2: (Double, Double)) -> Int {
+    let lat1 = airport1.0
+    let long1 = airport1.1
+    let lat2 = airport2.0
+    let long2 = airport2.1
     
     let distance = haversineDistance(apt1lat: lat1, apt1long: long1, apt2lat: lat2, apt2long: long2)
     let bearing = initialBearing(apt1lat: lat1, apt1long: long1, apt2lat: lat2, apt2long: long2)
@@ -203,27 +244,15 @@ func getMaxAltitude(airport1: String, airport2: String) -> String {
         {
             maxElevation = elevation
         }
-        print("Coordinates at \(distanceCovered), Nautical miles: \(currentPoint), Altitude: \(elevation)")
+        //print("Coordinates at \(distanceCovered) nautical miles: \(currentPoint), Bearing: \(bearing), Altitude: \(elevation), Max Elev \(maxElevation)")
         distanceCovered += 3.0
     }
     
-    return "Maximum Terrain Elevation:\n\t\(maxElevation)\"\nDistance between airports:\n\t\(distance) nm\nBearing:\n\t\(bearing)"
+    return maxElevation
 }
 
 
-
-
-// ALL THE UI STUFF
-/*
-struct SuggestedAltitudeView: View {
-    //@State private var maxElevation: String = getMaxAltitude(airport1: "KLGB", airport2: "KCMA")
-    
-    var body: some View {
-        Text("Hello darkness my old friend")
-        //Text(maxElevation)
-    }
-}*/
-
+// All the UI Stuff
 struct SuggestedAltitudeView: View {
     @State private var airport1 = ""
     @State private var airport2 = ""
@@ -234,8 +263,8 @@ struct SuggestedAltitudeView: View {
     @State private var departing = ""
     @State private var arriving = ""
     @State private var maximumElevation = 0
-    @State private var distanceBetween = 0
-    @State private var bearingBetween = 0
+    @State private var distanceBetween = 0.0
+    @State private var bearingBetween = 0.0
     @State private var suggestAltitude = 0
     @State private var vfrORifrString = "VFR"
     @State private var vfrORifr = true
@@ -263,6 +292,9 @@ struct SuggestedAltitudeView: View {
                         getSuggestedAltitude()
                         findAirport1(apt1: airport1)
                         findAirport2(apt2: airport2)
+                        findDistance()
+                        findBearing()
+                        getMaximumAltitude()
                     }) {
                         Text("Find Best Altitude")
                             .padding()
@@ -292,7 +324,7 @@ struct SuggestedAltitudeView: View {
                         .padding()
                     Text("Highest Terrain:\n\t\(maximumElevation) ft")
                         .padding()
-                    Text("Suggested Minimum Altitude:\n\t\(suggestAltitude) ft")
+                    Text("Suggested Altitude:\n\t\(suggestAltitude) ft")
                         .padding()
                     Text("Distance Between Airports:\n\t\(distanceBetween) NM")
                         .padding()
@@ -310,15 +342,36 @@ struct SuggestedAltitudeView: View {
     private func findAirport1(apt1: String) {
         airport1String = fetchAirportString(airport: apt1)
         departing = parseAirportName(jsonString: airport1String)
-        arriving = parseAirportName(jsonString: airport2String)
+        airport1coords = parseAirportCoords(jsonString: airport1String)
     }
     // Function to grab API string of airport2
     private func findAirport2(apt2: String) {
         airport2String = fetchAirportString(airport: apt2)
+        arriving = parseAirportName(jsonString: airport2String)
+        airport2coords = parseAirportCoords(jsonString: airport2String)
+    }
+    // Function to find the distance between two airports
+    private func findDistance() {
+        distanceBetween = haversineDistance(apt1lat: airport1coords.0, apt1long: airport1coords.1, apt2lat: airport2coords.0, apt2long: airport2coords.1)
+    }
+    // Function to find the bearing to the destination
+    private func findBearing() {
+        bearingBetween = initialBearing(apt1lat: airport1coords.0, apt1long: airport1coords.1, apt2lat: airport2coords.0, apt2long: airport2coords.1)
+    }
+    // Function to return maximum altitude
+    private func getMaximumAltitude() {
+        maximumElevation = getMaxAltitude(airport1: (airport1coords.0, airport1coords.1), airport2: (airport2coords.0, airport2coords.1))
     }
     // Function to return suggested altitude
     private func getSuggestedAltitude() {
-        suggestAltitude = 1000
+        if (vfrORifr)
+        {
+            suggestAltitude = 6500
+        }
+        else
+        {
+            suggestAltitude = 8000
+        }
     }
     // Toggle between VFR and IFR
     private func toggleAction() {
