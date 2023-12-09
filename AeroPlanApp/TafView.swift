@@ -132,6 +132,7 @@ struct TAFDetailView: View {
 			let decodedForecast = taf.decoded_forecast
 			Text("Forecast Start:").bold()
 			Text(formatDate(from: decodedForecast.start))
+			
 			Text("Forecast End:").bold()
 			Text(formatDate(from: decodedForecast.end))
 			
@@ -170,35 +171,35 @@ struct TAFDetailView: View {
 				// For Complex Types (like Wind, WindShear, etc.): You need to check if the value exists with if let and then access its properties.
 				if let winds = line.winds {
 					Text("Wind Data:").bold()
-					Text("----------------")
+					Text("")
 					
 					// str value
-					Text("Symbol:").bold()
+					Text("   Symbol:").bold()
 					Text(winds.symbol ?? "N/A")
 					
 					// str value
-					Text("Wind Direction:").bold()
+					Text("   Wind Direction:").bold()
 					Text(winds.direction ?? "N/A")
 					
 					// int value
 					if let speed = winds.speed {
-						Text("Wind Speed").bold()
+						Text("   Wind Speed").bold()
 						Text("\(speed)")
 					} else {
-						Text("Peak Gusts:").bold()
+						Text("   Peak Gusts:").bold()
 						Text("N/A")
 					}
 					
 					// str value
-					Text("Wind Units:").bold()
+					Text("   Wind Units:").bold()
 					Text(winds.units ?? "N/A")
 					
 					// int value
 					if let peakGusts = winds.peak_gusts {
-						Text("Peak Gusts:").bold()
+						Text("   Peak Gusts:").bold()
 						Text("\(peakGusts)")
 					} else {
-						Text("Peak Gusts:").bold()
+						Text("   Peak Gusts:").bold()
 						Text("N/A")
 					}
 				} else {
@@ -208,22 +209,23 @@ struct TAFDetailView: View {
 				// Windshear
 				if let windshear = line.windshear {
 					Text("WindShear Data:").bold()
-					Text("----------------")
+					Text("")
 					
-					Text("Wind Direction:").bold()
+					Text("   Symbol:").bold()
+					Text(windshear.symbol ?? "N/A")
+					
+				    Text("   Height:").bold()
+				    Text(windshear.height ?? "N/A")
+						
+					Text("   Direction:").bold()
 					Text(windshear.direction ?? "N/A")
 					
-					Text("WindShear Speed:").bold()
+					Text("   Speed:").bold()
 					Text(windshear.speed ?? "N/A")
 						 
-					Text("WindShear Speed:").bold()
+					Text("   Units:").bold()
 					Text(windshear.units ?? "N/A")
-						 
-					Text("Symbol:").bold()
-					Text(windshear.symbol ?? "N/A")
-						 
-					Text("Peak Gusts:").bold()
-					Text(windshear.height ?? "N/A")
+					
 				} else {
 					Text("WindShear Data:").bold()
 					Text("N/A")
@@ -231,15 +233,15 @@ struct TAFDetailView: View {
 				// Visibility
 				if let visibility = line.visibility {
 					Text("Visibility Data:").bold()
-					Text("----------------")
+					Text("")
 					
-					Text("Symbol:").bold()
+					Text("   Symbol:").bold()
 					Text(visibility.symbol ?? "N/A")
 					
-					Text("Visibility:").bold()
+					Text("   Visibility:").bold()
 					Text(visibility.visibility ?? "N/A")
 					
-					Text("Units:").bold()
+					Text("   Units:").bold()
 					Text(visibility.units ?? "N/A")
 				} else {
 					Text("visibility Data:").bold()
@@ -251,20 +253,20 @@ struct TAFDetailView: View {
 				// Check if the clouds array is not empty
 				if !line.clouds.isEmpty {
 					Text("Cloud Data:").bold()
-					Text("----------------")
+					Text("")
 
 					ForEach(line.clouds, id: \.symbol) { cloud in
 						Group {
-							Text("Symbol:").bold()
+							Text("   Symbol:").bold()
 							Text(cloud.symbol ?? "N/A")
 
-							Text("Coverage:").bold()
+							Text("   Coverage:").bold()
 							Text(cloud.coverage ?? "N/A")
 
-							Text("Altitude:").bold()
+							Text("   Altitude:").bold()
 							Text(cloud.altitude ?? "N/A")
 
-							Text("Special:").bold()
+							Text("   Special:").bold()
 							Text(cloud.special ?? "N/A")
 						}
 					}
@@ -272,8 +274,8 @@ struct TAFDetailView: View {
 					Text("Cloud Data:").bold()
 					Text("N/A")
 				}
-				Spacer(minLength: 20) // Space after ForEach
-				Spacer(minLength: 20)
+				Spacer(minLength: 40) // Space after ForEach
+				Spacer(minLength: 40)
 			} // Outside line forecast for loop
 			Text("Raw TAF Forecast:").bold()
 			VStack(alignment: .leading) {

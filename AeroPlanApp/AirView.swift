@@ -24,7 +24,6 @@ struct AirView: View {
 	let customFont = Font.custom("Geologica-Light", size: 30)
     
     var body: some View {
-	  NavigationView {
 		ZStack {
 		    LinearGradient(gradient: Gradient(colors: [Color(hex: 0xE2C285, alpha: 0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
 					 startPoint: .bottom,
@@ -61,8 +60,8 @@ struct AirView: View {
 			  .padding(10) // Add padding around the VStack to center it
 		    }
 		}
-	  }
-    }
+	}
+    
 	// Helper function to determine the view based on destination string
 	private func getViewForDestination(_ destination: String) -> some View {
 		switch destination {
