@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "dvrkcloud_Map_UI_UX_futuristic_pink_purple_blue_color_scheme_465da359-6855-447f-b6bf-e2350b0e9cda.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
