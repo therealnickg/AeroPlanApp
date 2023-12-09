@@ -117,8 +117,9 @@ struct HomeView: View {
                             Image("Ground")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2)
-                                .background(Color.blue)
+                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                .cornerRadius(50)
                                 .padding(10)
                         }
                         
@@ -128,8 +129,9 @@ struct HomeView: View {
                             Image("Air")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2)
-                                .background(Color.green)
+                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                .cornerRadius(50)
                                 .padding(10)
                         }
                         Button(action: {
@@ -138,8 +140,9 @@ struct HomeView: View {
                             Image("Notes")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: geometry.size.width / 2)
-                                .background(Color.red)
+                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                .cornerRadius(50)
                                 .padding(10)
                         }
                         Button(action: {
@@ -148,14 +151,16 @@ struct HomeView: View {
                             Image("Check.svg")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: geometry.size.width / 2)
-                                .background(Color.red)
+                                .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                .cornerRadius(50)
                                 .padding(10)
                         }
                         
                         
                     }
                 }
+                .background(Color.white)
                 .frame(width: geometry.size.width)
                 .offset(x: isMenuOpen ? geometry.size.width * 0.5 : 0) // Slide the main content view based on menu state
                 
@@ -207,7 +212,9 @@ struct HomeView: View {
                 }
                 
                 
-            }.frame(maxWidth: geometry.size.width)
+            }
+            .frame(maxWidth: geometry.size.width)
+            .background(Color(red:171/255, green:187/255,blue: 214/255))
             
             
         }
