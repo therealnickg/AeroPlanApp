@@ -78,9 +78,10 @@ struct HomeView: View {
                         Spacer()
                     }
                     
-                    Text("Main Content") // Your content here
-                        .frame(maxWidth: .infinity)
-                        .padding(.top)
+                    Image("AeroPlan") // LOGO
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: geometry.size.width / 1.5 , maxHeight: geometry.size.height / 6)
                         .background(Color.white)
                     
                     
@@ -209,7 +210,7 @@ struct HomeView: View {
                             Button(action: {
                                 appMode = .GAPC
                             }) {
-                                Image("Check.svg")
+                                Image("check.svg")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
