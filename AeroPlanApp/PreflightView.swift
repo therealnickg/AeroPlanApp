@@ -28,11 +28,10 @@ struct PreflightView: View {
     
     var body: some View {
 		ZStack {
-			// Background Color
-			LinearGradient(gradient: Gradient(colors: [Color(hex: 0xE2C285, alpha: 0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
-					 startPoint: .bottom,
-					 endPoint: .top)
-			  .ignoresSafeArea()
+			// background-image
+			Image("ground-mode-background")
+				.resizable()
+				.ignoresSafeArea()
 			
 			ScrollView {
 			VStack(spacing: 20) { // Adjust the spacing between buttons
@@ -51,9 +50,10 @@ struct PreflightView: View {
 							.aspectRatio(contentMode: .fit)
 							.cornerRadius(10)
 							.frame(maxWidth: .infinity) // Take up the entire width
+							.opacity(0.3)
 						Text(button.title)
 							.font(customFont)
-							.foregroundColor(Color(hex: 0xE2C285, alpha: 1.0))
+							.foregroundColor(Color(hex: 0x0F2038, alpha: 1.0))
 							.padding(.trailing, 100) // Space buttons from side edges
 						Image(button.imageIcon)
 							.resizable()
@@ -61,7 +61,11 @@ struct PreflightView: View {
 							.padding(.leading, 250) // left side spacing from center
 					}
 					}
-				}
+				}.overlay(
+					RoundedRectangle(cornerRadius: 10)
+					 .stroke(LinearGradient(gradient: Gradient(colors:  [Color(hex: 0x2A4156, alpha:0.9), Color(hex: 0x8ABACD, alpha: 0.8)]), startPoint: .top,
+						  endPoint: .bottom), lineWidth: 8) // You can adjust lineWidth for border thickness
+				 )
 			}
 			.padding(10) // Add padding around the VStack to center it
 			}

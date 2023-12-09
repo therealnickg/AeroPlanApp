@@ -115,10 +115,6 @@ struct TAFDetailView: View {
 	let taf: TAFResponse
 
 	var body: some View {
-		let columns = [
-			GridItem(.flexible()),
-			GridItem(.flexible())
-		]
 
 		LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .leading) {
 			Text("ICAO Code:").bold()

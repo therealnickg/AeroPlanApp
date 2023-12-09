@@ -15,8 +15,9 @@ struct GroundView: View {
 		// let id = UUID(): Here, you define a property named id of type UUID. A UUID (Universally Unique Identifier) is a randomly generated 128-bit value that is guaranteed to be unique. By assigning a new UUID to the id property, you ensure that each ButtonItem instance has a unique identifier.
 		let id = UUID()
 		let title: String
-		let hexColor: UInt
+		let hexColor: UInt	// font color
 		let imageName: String // Add imageName property for the button image
+		let imgIcon: String
 		let destination: String
 		
 		var fontColor: Color {
@@ -25,8 +26,8 @@ struct GroundView: View {
 	}
 	
 	let buttons: [ButtonItem] = [
-		ButtonItem(title:"Pre-flight", hexColor: 0xE2C285, imageName: "Preflight", destination: "Pre-flight"),
-		ButtonItem(title: "Tools", hexColor: 0x8AC1E7, imageName: "Tools", destination: "Tools")
+		ButtonItem(title:"Pre-flight", hexColor: 0x2A4156, imageName: "sky", imgIcon:"airplane.departure", destination: "Pre-flight"),
+		ButtonItem(title: "Tools", hexColor: 0x8AC1E7, imageName: "sky", imgIcon:"wrench.and.screwdriver.fill", destination: "Tools")
 	]
 	
 	// FIX
@@ -35,12 +36,10 @@ struct GroundView: View {
 	
 	var body: some View {
 		ZStack{
-			// Background Color
-			LinearGradient(gradient: Gradient(colors:  [Color(hex: 0xE2C285, alpha:0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
-				startPoint: .bottom,
-				endPoint: .top)
+			// background-image
+			Image("ground-mode-background")
+				.resizable()
 				.ignoresSafeArea()
-			
 			VStack {
 				// Title Bar
 				Image("gm-title")
@@ -56,14 +55,25 @@ struct GroundView: View {
 								.resizable()
 								.aspectRatio(contentMode: .fit)
 								.cornerRadius(10)
+								.opacity(0.4)
 							
 							Text(button.title)
 								.foregroundColor(button.fontColor)
 								.padding(.trailing, 100) // move text left by adding space to the right
 								.font(customFont)
+							Image(systemName: button.imgIcon)
+								.resizable()
+								.foregroundColor(button.fontColor)
+								.frame(width: 70.0, height: 70.0)
+								.padding(.leading, 250) // left side spacing from center
 						}
 					}
 				}
+				.overlay(
+				RoundedRectangle(cornerRadius: 10)
+					.stroke(LinearGradient(gradient: Gradient(colors:  [Color(hex: 0x2A4156, alpha:0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]), startPoint: .bottom,
+						 endPoint: .top), lineWidth: 13) // You can adjust lineWidth for border thickness
+				)
 				.padding(10)	// Space buttons from side edges
 			}
 		}
@@ -80,6 +90,7 @@ struct GroundView: View {
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
 		}
 	}
+	
 }
 		
 struct GroundView_Previews: PreviewProvider {

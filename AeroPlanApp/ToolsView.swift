@@ -29,7 +29,7 @@ struct ToolsView: View {
     var body: some View {
 		ZStack {
 			// Background Color
-			LinearGradient(gradient: Gradient(colors: [Color(hex: 0xE2C285, alpha: 0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
+			LinearGradient(gradient: Gradient(colors: [Color(hex: 0x5EC9EC, alpha: 0.9), Color(hex: 0x162838, alpha: 0.9)]),
 					 startPoint: .bottom,
 					 endPoint: .top)
 			  .ignoresSafeArea()
@@ -53,7 +53,7 @@ struct ToolsView: View {
 								  .frame(maxWidth: .infinity) // Take up the entire width
 							  Text(button.title)
 								  .font(customFont)
-								  .foregroundColor(Color(hex: 0xE2C285, alpha: 1.0))
+								  .foregroundColor(Color(hex: 0x162838, alpha: 1.0))
 								  .padding(.trailing, 100) // Space buttons from side edges
 							  Image(button.imageIcon)
 								  .resizable()

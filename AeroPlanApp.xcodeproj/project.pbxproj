@@ -61,11 +61,9 @@
 		4A10B92F2B2467FF00D7FFF9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10B91F2B2467FE00D7FFF9 /* LocationManager.swift */; };
 		4A10B9302B2467FF00D7FFF9 /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10B9202B2467FE00D7FFF9 /* LogDetailView.swift */; };
 		4A10B9312B2467FF00D7FFF9 /* AeroPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10B9212B2467FE00D7FFF9 /* AeroPlanApp.swift */; };
-		4A10B9322B2467FF00D7FFF9 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10B9222B2467FE00D7FFF9 /* LogsView.swift */; };
 		4A10B9332B2467FF00D7FFF9 /* ATCAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10B9232B2467FE00D7FFF9 /* ATCAnnotation.swift */; };
-		4A10B9342B2467FF00D7FFF9 /* FetchFlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10B9242B2467FE00D7FFF9 /* FetchFlightViewModel.swift */; };
 		4A10B9352B2467FF00D7FFF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A10B9262B2467FE00D7FFF9 /* Preview Assets.xcassets */; };
-		4A10B9362B2467FF00D7FFF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A10B9272B2467FF00D7FFF9 /* Assets.xcassets */; };
+		4A10B9392B246FAA00D7FFF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A10B9382B246FAA00D7FFF9 /* Preview Assets.xcassets */; };
 		4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16848E2ADBA54F00D44B96 /* MetarView.swift */; };
 		4A4638942B0B2A83003D152A /* NearestWaypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4638932B0B2A83003D152A /* NearestWaypoint.swift */; };
 		4A5AAD662B0B621300EA4C8A /* CompassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */; };
@@ -108,11 +106,9 @@
 		4A10B91F2B2467FE00D7FFF9 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4A10B9202B2467FE00D7FFF9 /* LogDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
 		4A10B9212B2467FE00D7FFF9 /* AeroPlanApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AeroPlanApp.swift; sourceTree = "<group>"; };
-		4A10B9222B2467FE00D7FFF9 /* LogsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		4A10B9232B2467FE00D7FFF9 /* ATCAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCAnnotation.swift; sourceTree = "<group>"; };
-		4A10B9242B2467FE00D7FFF9 /* FetchFlightViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchFlightViewModel.swift; sourceTree = "<group>"; };
 		4A10B9262B2467FE00D7FFF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4A10B9272B2467FF00D7FFF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A10B9382B246FAA00D7FFF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A16848E2ADBA54F00D44B96 /* MetarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarView.swift; sourceTree = "<group>"; };
 		4A4638932B0B2A83003D152A /* NearestWaypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestWaypoint.swift; sourceTree = "<group>"; };
 		4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassViewModel.swift; sourceTree = "<group>"; };
@@ -183,10 +179,9 @@
 		374D9AC52AA1A06B00A33BA8 /* AeroPlanApp */ = {
 			isa = PBXGroup;
 			children = (
+				4A10B9372B246FAA00D7FFF9 /* Preview Content */,
 				4A10B9212B2467FE00D7FFF9 /* AeroPlanApp.swift */,
-				4A10B9272B2467FF00D7FFF9 /* Assets.xcassets */,
 				4A10B9232B2467FE00D7FFF9 /* ATCAnnotation.swift */,
-				4A10B9242B2467FE00D7FFF9 /* FetchFlightViewModel.swift */,
 				4A10B91B2B2467FE00D7FFF9 /* FlightData.swift */,
 				4A10B9182B2467FE00D7FFF9 /* FlightLogEntry.swift */,
 				4A10B91D2B2467FE00D7FFF9 /* FlightTrackingView.swift */,
@@ -194,7 +189,6 @@
 				4A10B91F2B2467FE00D7FFF9 /* LocationManager.swift */,
 				4A10B9202B2467FE00D7FFF9 /* LogDetailView.swift */,
 				4A10B91C2B2467FE00D7FFF9 /* LogEntryRow.swift */,
-				4A10B9222B2467FE00D7FFF9 /* LogsView.swift */,
 				4A10B91E2B2467FE00D7FFF9 /* PilotReviewNotesView.swift */,
 				4A10B9252B2467FE00D7FFF9 /* Preview Content */,
 				4A10B91A2B2467FE00D7FFF9 /* TimeOfArrivalView.swift */,
@@ -242,6 +236,14 @@
 			isa = PBXGroup;
 			children = (
 				4A10B9262B2467FE00D7FFF9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A10B9372B246FAA00D7FFF9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4A10B9382B246FAA00D7FFF9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -340,7 +342,7 @@
 				374D9ACE2AA1A06C00A33BA8 /* Preview Assets.xcassets in Resources */,
 				374D9ACB2AA1A06C00A33BA8 /* Assets.xcassets in Resources */,
 				37CC820A2AA4342A003D1E09 /* GoogleService-Info.plist in Resources */,
-				4A10B9362B2467FF00D7FFF9 /* Assets.xcassets in Resources */,
+				4A10B9392B246FAA00D7FFF9 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +356,6 @@
 				374D9B272AA27F1A00A33BA8 /* NewPilotView.swift in Sources */,
 				4A10B92B2B2467FF00D7FFF9 /* FlightData.swift in Sources */,
 				374D9B212AA27E9400A33BA8 /* ProfileView.swift in Sources */,
-				4A10B9322B2467FF00D7FFF9 /* LogsView.swift in Sources */,
 				4AF8BE852ADB83E0007056C5 /* PreflightView.swift in Sources */,
 				37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */,
 				4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */,
@@ -376,7 +377,6 @@
 				4A10B9282B2467FF00D7FFF9 /* FlightLogEntry.swift in Sources */,
 				4A10B9332B2467FF00D7FFF9 /* ATCAnnotation.swift in Sources */,
 				37CC82062AA4340D003D1E09 /* Pilot.swift in Sources */,
-				4A10B9342B2467FF00D7FFF9 /* FetchFlightViewModel.swift in Sources */,
 				4AF8BE872ADB87C0007056C5 /* ToolsView.swift in Sources */,
 				4A10B9292B2467FF00D7FFF9 /* GAPCView.swift in Sources */,
 				4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */,

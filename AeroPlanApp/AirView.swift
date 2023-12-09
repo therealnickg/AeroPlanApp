@@ -25,7 +25,7 @@ struct AirView: View {
     
     var body: some View {
 		ZStack {
-		    LinearGradient(gradient: Gradient(colors: [Color(hex: 0xE2C285, alpha: 0.9), Color(hex: 0x8AC1E7, alpha: 0.9)]),
+		    LinearGradient(gradient: Gradient(colors: [Color(hex: 0x5EC9EC, alpha: 0.9), Color(hex: 0x0F2038, alpha: 0.9)]),
 					 startPoint: .bottom,
 					 endPoint: .top)
 			  .ignoresSafeArea()
@@ -39,23 +39,28 @@ struct AirView: View {
 				
 				ForEach(buttons) { button in
 				    NavigationLink(destination: getViewForDestination(button.destination)) {
-					  ZStack {
-						Image("sky-small")
-						    .resizable()
-						    .aspectRatio(contentMode: .fit)
-						    .cornerRadius(10)
-						    .frame(maxWidth: .infinity) // Take up the entire width
-						Text(button.title)
-							  .font(customFont)
-							  .foregroundColor(Color(hex: 0xE2C285, alpha: 1.0))
-							  .padding(.trailing, 100) // Space buttons from side edges
-						  Image(button.imageIcon)
-							  .resizable()
-							  .frame(width: 50.0, height: 50.0)
-							  .padding(.leading, 250)
-					  }
-				    }
-				}
+						  ZStack {
+							  Image("sky-small")
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.cornerRadius(10)
+								.frame(maxWidth: .infinity) // Take up the entire width
+								.opacity(0.8)
+							  Text(button.title)
+								  .font(customFont)
+								  .foregroundColor(Color(hex: 0x263B4F, alpha: 1.0))
+								  .padding(.trailing, 100) // Space buttons from side edges
+							  Image(button.imageIcon)
+								  .resizable()
+								  .frame(width: 50.0, height: 50.0)
+								  .padding(.leading, 250)
+						  }
+					}
+				}.overlay(
+					RoundedRectangle(cornerRadius: 10)
+						.stroke(LinearGradient(gradient: Gradient(colors:  [Color(hex: 0x2A4156, alpha:1), Color(hex: 0x8AC1E7, alpha: 1)]), startPoint: .bottomLeading,
+						  endPoint: .topTrailing), lineWidth: 8) // You can adjust lineWidth for border thickness
+				 )
 			  }
 			  .padding(10) // Add padding around the VStack to center it
 		    }
