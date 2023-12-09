@@ -9,6 +9,8 @@ import SwiftUI
 import Firebase
 
 
+
+
 struct VisualEffectView: UIViewRepresentable {
     let blurStyle: UIBlurEffect.Style
 
@@ -76,9 +78,10 @@ struct HomeView: View {
                         Spacer()
                     }
                     
-                    Text("Main Content") // Your content here
-                        .frame(maxWidth: .infinity)
-                        .padding(.top)
+                    Image("AeroPlan") // LOGO
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: geometry.size.width / 1.5 , maxHeight: geometry.size.height / 6)
                         .background(Color.white)
                     
                     
@@ -93,32 +96,135 @@ struct HomeView: View {
                                 EmptyView()
                             }
                         }
+                        else if appMode == .pReview {
+                            NavigationLink(destination: PilotReviewNotesView(viewModel: PilotReviewNotesView.TextEditorViewModel()), tag: .pReview, selection: appModeBinding) {
+                                EmptyView()
+                            }
+                        }
+                        else if appMode == .logs {
+                                NavigationLink(destination: LogsView(), tag: .logs, selection: appModeBinding) {
+                                    EmptyView()
+                                }
+                            }
+                        else if appMode == .lostCom {
+                            NavigationLink(destination: LostComView(), tag: .lostCom, selection: appModeBinding) {
+                                EmptyView()
+                            }
+                        }
+                        else if appMode == .GAPC {
+                            NavigationLink(destination: GAPCView(), tag: .GAPC, selection: appModeBinding){
+                                EmptyView()
+                            }
+                        }
+                        
 
                         
                     }
-                    
+                                        Spacer()
                     HStack{
-                        Button(action: {
-                            appMode = .ground
-                        }) {
-                            Image("Ground")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2)
-                                .background(Color.blue)
+                        VStack{
+                            Button(action: {
+                                appMode = .ground
+                            }) {
+                                Image("Ground")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            Text("Ground")
+
                         }
                         
-                        Button(action: {
-                            appMode = .air
-                        }) {
-                            Image("Air")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:  geometry.size.width / 2)
-                                .background(Color.green)
+                        VStack{
+                            Button(action: {
+                                appMode = .air
+                            }) {
+                                Image("Air")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5, maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            
+                            Text("Air")
+                            
+                        }
+
+                    }
+                    Spacer()
+    
+                    HStack{
+                        VStack{
+                            Button(action: {
+                                appMode = .pReview
+                            }) {
+                                Image("Notes")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                                
+                            }
+                            Text("Notes")
+                        }
+                        VStack{
+                            Button(action: {
+                                appMode = .logs
+                            }) {
+                                Image("Logs")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            Text("Logs")
                         }
                     }
+                    
+                    Spacer()
+                  
+                    
+                    HStack{
+                        VStack{
+                            Button(action: {
+                                appMode = .lostCom
+                            }) {
+                                Image("LostCom")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                            }
+                            Text("LostCom")
+                        VStack{
+                            Button(action: {
+                                appMode = .GAPC
+                            }) {
+                                Image("check.svg")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
+                                    .background(Color(red:171/255, green:187/255,blue: 214/255))
+                                    .cornerRadius(50)
+                                    .padding(10)
+                            }
+                            Text("GAPC")
+                        }
+                    }
+                    Spacer()
+
                 }
+                .background(Color.white)
                 .frame(width: geometry.size.width)
                 .offset(x: isMenuOpen ? geometry.size.width * 0.5 : 0) // Slide the main content view based on menu state
                 
@@ -170,12 +276,15 @@ struct HomeView: View {
                 }
                 
                 
-            }.frame(maxWidth: geometry.size.width)
+            }
+            .frame(maxWidth: geometry.size.width)
+            .background(Color(red:171/255, green:187/255,blue: 214/255))
             
             
         }
     }
     
+}
 }
     
 

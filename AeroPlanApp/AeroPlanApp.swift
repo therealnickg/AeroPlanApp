@@ -1,6 +1,7 @@
 import SwiftUI
 import Firebase
 
+// main app to connect to FireBase and take in the default parameters initially.
 @main
 struct AeroPlanApp: App {
     @StateObject var dataManager = DataManager()
@@ -18,4 +19,5 @@ struct AeroPlanApp: App {
             ).environmentObject(dataManager)
         }
     }
+    
 }
