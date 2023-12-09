@@ -15,7 +15,7 @@ struct Question {
 	let options: [String]
 }
 
-class ATCPractice: ObservableObject {
+class ATCQuestion: ObservableObject {
 	@Published private var game: ATCGameViewModel
 	@Published var score: Int = 0
 	@Published var isQuizCompleted: Bool = false

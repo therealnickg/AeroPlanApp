@@ -53,9 +53,12 @@
 		37CC820A2AA4342A003D1E09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */; };
 		37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC820B2AA43470003D1E09 /* AppMode.swift */; };
 		4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16848E2ADBA54F00D44B96 /* MetarView.swift */; };
+		4A4638942B0B2A83003D152A /* NearestWaypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4638932B0B2A83003D152A /* NearestWaypoint.swift */; };
+		4A5AAD662B0B621300EA4C8A /* CompassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */; };
+		4A5AAD682B0B6BF700EA4C8A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AAD672B0B6BF700EA4C8A /* LocationManager.swift */; };
 		4A7D26962AB95104004FF0CF /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D26952AB95104004FF0CF /* ColorHex.swift */; };
 		4AD66BD92AFA1A7000ACB5DA /* TafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD66BD82AFA1A7000ACB5DA /* TafView.swift */; };
-		4AD825C92AD2143E00279B0A /* ATCPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825C82AD2143E00279B0A /* ATCPractice.swift */; };
+		4AD825C92AD2143E00279B0A /* ATCQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825C82AD2143E00279B0A /* ATCQuestion.swift */; };
 		4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825CA2AD21B0A00279B0A /* ATCView.swift */; };
 		4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */; };
 		4AF8BE852ADB83E0007056C5 /* PreflightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8BE842ADB83E0007056C5 /* PreflightView.swift */; };
@@ -83,9 +86,12 @@
 		37CC82092AA4342A003D1E09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37CC820B2AA43470003D1E09 /* AppMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMode.swift; sourceTree = "<group>"; };
 		4A16848E2ADBA54F00D44B96 /* MetarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarView.swift; sourceTree = "<group>"; };
+		4A4638932B0B2A83003D152A /* NearestWaypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestWaypoint.swift; sourceTree = "<group>"; };
+		4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassViewModel.swift; sourceTree = "<group>"; };
+		4A5AAD672B0B6BF700EA4C8A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4A7D26952AB95104004FF0CF /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		4AD66BD82AFA1A7000ACB5DA /* TafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TafView.swift; sourceTree = "<group>"; };
-		4AD825C82AD2143E00279B0A /* ATCPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCPractice.swift; sourceTree = "<group>"; };
+		4AD825C82AD2143E00279B0A /* ATCQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCQuestion.swift; sourceTree = "<group>"; };
 		4AD825CA2AD21B0A00279B0A /* ATCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCView.swift; sourceTree = "<group>"; };
 		4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCGameViewModel.swift; sourceTree = "<group>"; };
 		4AF8BE842ADB83E0007056C5 /* PreflightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreflightView.swift; sourceTree = "<group>"; };
@@ -154,7 +160,7 @@
 				37CC820B2AA43470003D1E09 /* AppMode.swift */,
 				374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */,
 				4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */,
-				4AD825C82AD2143E00279B0A /* ATCPractice.swift */,
+				4AD825C82AD2143E00279B0A /* ATCQuestion.swift */,
 				4AD825CA2AD21B0A00279B0A /* ATCView.swift */,
 				4A7D26952AB95104004FF0CF /* ColorHex.swift */,
 				374D9B1A2AA27E1300A33BA8 /* ContentView.swift */,
@@ -175,6 +181,9 @@
 				4AF8BE862ADB87C0007056C5 /* ToolsView.swift */,
 				4A16848E2ADBA54F00D44B96 /* MetarView.swift */,
 				4AD66BD82AFA1A7000ACB5DA /* TafView.swift */,
+				4A4638932B0B2A83003D152A /* NearestWaypoint.swift */,
+				4A5AAD652B0B621300EA4C8A /* CompassViewModel.swift */,
+				4A5AAD672B0B6BF700EA4C8A /* LocationManager.swift */,
 			);
 			path = AeroPlanApp;
 			sourceTree = "<group>";
@@ -295,11 +304,14 @@
 				4AF8BE852ADB83E0007056C5 /* PreflightView.swift in Sources */,
 				37CC820C2AA43471003D1E09 /* AppMode.swift in Sources */,
 				4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */,
+				4A4638942B0B2A83003D152A /* NearestWaypoint.swift in Sources */,
 				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
 				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
 				4AD66BD92AFA1A7000ACB5DA /* TafView.swift in Sources */,
 				4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */,
-				4AD825C92AD2143E00279B0A /* ATCPractice.swift in Sources */,
+				4AD825C92AD2143E00279B0A /* ATCQuestion.swift in Sources */,
+				4A5AAD662B0B621300EA4C8A /* CompassViewModel.swift in Sources */,
+				4A5AAD682B0B6BF700EA4C8A /* LocationManager.swift in Sources */,
 				37C194C72AB398F100D2A92E /* PersonalMinimumsView.swift in Sources */,
 				374D9B1B2AA27E1300A33BA8 /* ContentView.swift in Sources */,
 				374D9B1F2AA27E8D00A33BA8 /* GroundView.swift in Sources */,
@@ -438,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AeroPlanApp/Preview Content\"";
@@ -449,13 +462,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nicolasg.AeroPlanApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geo.AeroPlanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AeroPlanApp/Preview Content\"";
@@ -478,13 +494,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nicolasg.AeroPlanApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geo.AeroPlanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

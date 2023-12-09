@@ -67,13 +67,13 @@ struct AirView: View {
 	private func getViewForDestination(_ destination: String) -> some View {
 		switch destination {
 		case "LostCommunicationView":
-			return AnyView(ToolsView())	// Change ToolsView()
+			return AnyView(EmptyView())	// Change EmptyView()
 		case "BackupInstructionsView":
-			return AnyView(ToolsView())	// Change ToolsView()
+			return AnyView(EmptyView())	// Change EmptyView()
 		case "ImportantProcedureView":
-			return AnyView(ToolsView())	// Change ToolsView()
+			return AnyView(EmptyView())	// Change EmptyView()
 		case "MovingMapView":
-			return AnyView(ToolsView())	// Change ToolsView()
+			return AnyView(NearestWaypoint())	// Change ToolsView()
 		default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
 		}

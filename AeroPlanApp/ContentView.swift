@@ -121,14 +121,14 @@ struct ContentView: View {
                        height: UIScreen.main.bounds.height)
         )
     }
-    var backButton: some View {
+    /*var backButton: some View {
             Button(action: {
                 isUserLoggedIn = false // Set userIsLoggedIn to false to navigate back to the ContentView
             }) {
                 Image(systemName: "chevron.left")
                     .imageScale(.large)
             }
-        }
+        }*/
     
     func checkUserAuthentication() {
         if stayLoggedIn, let storedToken = UserDefaults.standard.string(forKey: "token") {

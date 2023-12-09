@@ -75,13 +75,13 @@ struct ToolsView: View {
 		  case "ATCView":
 			return AnyView(ATCView())
 		  case "TrafficPatternVisualizationView":
-			return AnyView(ToolsView())	// Change ToolsView()
+			return AnyView(EmptyView())	// Change EmptyView()
 		  case "ExperienceNotesView":
-			return AnyView(ToolsView())	// Change ToolsView()
+			return AnyView(EmptyView())	// Change EmptyView()
 		  case "METARView":
-			return AnyView(METARView()) 	// Change ToolsView()
+			return AnyView(METARView())
 		  case "TAFView":
-			return AnyView(ToolsView())	// Change ToolsView() 
+			return AnyView(TafView())
 		  default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
 		  }
