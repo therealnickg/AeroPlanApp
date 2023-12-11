@@ -289,12 +289,12 @@ struct SuggestedAltitudeView: View {
 
                 HStack(spacing: 20) {
                     Button(action: {
-                        getSuggestedAltitude()
                         findAirport1(apt1: airport1)
                         findAirport2(apt2: airport2)
                         findDistance()
                         findBearing()
                         getMaximumAltitude()
+                        getSuggestedAltitude()
                     }) {
                         Text("Find Best Altitude")
                             .padding()
@@ -364,13 +364,26 @@ struct SuggestedAltitudeView: View {
     }
     // Function to return suggested altitude
     private func getSuggestedAltitude() {
+        suggestAltitude = maximumElevation / 1000
+        if (bearingBetween > 180 && suggestAltitude % 2 == 1)
+        {
+            suggestAltitude = suggestAltitude + 1
+        } else
+        {
+            suggestAltitude = suggestAltitude + 2
+        }
         if (vfrORifr)
         {
-            suggestAltitude = 6500
+            suggestAltitude = suggestAltitude * 1000
+            suggestAltitude = suggestAltitude + 500
         }
         else
         {
-            suggestAltitude = 8000
+            suggestAltitude = suggestAltitude * 1000
+        }
+        if (suggestAltitude - maximumElevation < 1000)
+        {
+            suggestAltitude = suggestAltitude + 2000
         }
     }
     // Toggle between VFR and IFR
