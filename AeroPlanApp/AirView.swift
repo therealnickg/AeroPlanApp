@@ -73,9 +73,9 @@ struct AirView: View {
 		case "LostCommunicationView":
 			return AnyView(EmptyView())	// Change EmptyView()
 		case "BackupInstructionsView":
-			return AnyView(EmptyView())	// Change EmptyView()
+			return AnyView(BackupPilotInstructionsView())	// Change EmptyView()
 		case "ImportantProcedureView":
-			return AnyView(EmptyView())	// Change EmptyView()
+			return AnyView(EmergencyProceduresChecklistView())	// Change EmptyView()
 		case "MovingMapView":
 			return AnyView(NearestWaypoint())	// Change ToolsView()
 		default:
