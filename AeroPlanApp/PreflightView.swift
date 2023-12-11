@@ -76,7 +76,7 @@ struct PreflightView: View {
 	private func getViewForDestination(_ destination: String) -> some View {
 		switch destination {
 		case "IMSAFEAnalysisView":
-			return AnyView(EmptyView())	// Change ToolsView()
+			return AnyView(IMSAFE_analysis())	// Change ToolsView()
 		case "PersonalMinimumsView":
 			return AnyView(PersonalMinimumsView())	// Change EmptyView()
 		case "CurrencyView":
