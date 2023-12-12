@@ -204,8 +204,11 @@ struct HomeView: View {
                                     .frame(maxWidth:  geometry.size.width / 2.5,maxHeight: geometry.size.height / 4)
                                     .background(Color(red:171/255, green:187/255,blue: 214/255))
                                     .cornerRadius(50)
+                                    .padding(10)
                             }
                             Text("LostCom")
+                        }
+                        .offset(x:20)
                         VStack{
                             Button(action: {
                                 appMode = .GAPC
@@ -220,7 +223,8 @@ struct HomeView: View {
                             }
                             Text("GAPC")
                         }
-                    }
+                        .offset(x: 20)
+                    
                     Spacer()
 
                 }
