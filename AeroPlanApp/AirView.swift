@@ -18,6 +18,7 @@ struct AirView: View {
 		ButtonItem(title: "Lost Communication Emergency Button",  destination: "LostCommunicationView", imageIcon: "ipsIcon"),
 		ButtonItem(title: "Backup Pilot Instructions",  destination: "BackupInstructionsView", imageIcon: "backupinsIcon"),
 		ButtonItem(title: "Important Procedure Section",  destination: "ImportantProcedureView", imageIcon: "ipsIcon"),
+        ButtonItem(title: "Flight Tracking", destination: "FlightTrackingView", imageIcon: "backupinsIcon")
 		//ButtonItem(title: "Moving Map",  destination: "MovingMapView", imageIcon: "movingmapIcon")
 	]
 	// Custom Font
@@ -80,6 +81,8 @@ struct AirView: View {
 			return AnyView(EmergencyProceduresChecklistView())	// Change EmptyView()
 		/*case "MovingMapView":
 			return AnyView(NearestWaypoint())	// Change ToolsView()*/
+        case "FlightTrackingView":
+            return AnyView(FlightTrackingView())
 		default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
 		}
