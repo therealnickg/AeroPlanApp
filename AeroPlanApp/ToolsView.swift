@@ -76,7 +76,7 @@ struct ToolsView: View {
 		  case "VFRTrafficPatternView":
 			return AnyView(VFRTrafficPatternView())	// Change EmptyView()
 		  case "ExperienceNotesView":
-			return AnyView(EmptyView())	// Change EmptyView()
+              return AnyView(PilotReviewNotesView(viewModel: PilotReviewNotesView.TextEditorViewModel()))	// Change EmptyView()
 		  case "METARView":
 			return AnyView(METARView())
 		  case "TAFView":
