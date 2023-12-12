@@ -1,62 +1,119 @@
-//
-//  FlightTrackingView.swift
-//  AeroPlanApp
-//
-//  Created by Aaron Yu on 10/28/23.
-//
-
-
-
 import SwiftUI
 import MapKit
 import CoreLocation
+import Combine
+
+class LocationManager2: NSObject, ObservableObject, CLLocationManagerDelegate {
+    private var locationManager2 = CLLocationManager()
+
+    @Published var userLocation: CLLocationCoordinate2D?
+    
+    // Ensure that you declare a delegate property
+    weak var delegate: CLLocationManagerDelegate?
+
+    override init() {
+        super.init()
+        setupLocationManager()
+    }
+
+    func setupLocationManager() {
+        locationManager2.delegate = self
+        locationManager2.desiredAccuracy = kCLLocationAccuracyBest
+    }
+
+    func requestLocationPermission() {
+        locationManager2.requestWhenInUseAuthorization()
+    }
+
+    func startUpdatingLocation() {
+        locationManager2.startUpdatingLocation()
+    }
+
+    func stopUpdatingLocation() {
+        locationManager2.stopUpdatingLocation()
+    }
+
+    // CLLocationManagerDelegate methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last?.coordinate {
+            userLocation = location
+        }
+    }
+}
+
+class FlightTrackingViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @Published var locations: [FlightLocation] = []
+    @Published var isRecording = false
+    @Published var isMapViewVisible = false
+    @Published var userTrackingMode: MKUserTrackingMode = .follow
+    @Published var region: MKCoordinateRegion?
+    @Published var shouldUpdatePolyline = false
+    @Published var userLocation: CLLocationCoordinate2D?
+    @Published var mapView: MKMapView?
+    
+    
+    // Inject the location manager
+    var locationManager2: LocationManager2
+    
+    init(locationManager2: LocationManager2) {
+        self.locationManager2 = locationManager2
+        super.init()
+        setupLocationManager()
+    }
+    
+    func setupLocationManager() {
+        locationManager2.delegate = self
+        locationManager2.requestLocationPermission()
+        locationManager2.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            if let location = locations.last?.coordinate {
+                userLocation = location
+
+                // Update the region when the user location changes
+                if region == nil {
+                    region = MKCoordinateRegion(
+                        center: location,
+                        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                    )
+                } else {
+                    region?.center = location
+                }
+            }
+        }
+    
+    // Simplified method to adjust the zoom level
+        func adjustMapZoomLevel(factor: Double) {
+            guard let mapView = mapView else { return }
+            
+            let region = mapView.region
+            let span = MKCoordinateSpan(
+                        latitudeDelta: region.span.latitudeDelta * factor,
+                        longitudeDelta: region.span.longitudeDelta * factor
+                    )
+                    let adjustedRegion = MKCoordinateRegion(center: region.center, span: span)
+
+                    mapView.setRegion(adjustedRegion, animated: true)
+        }
+
+    // Additional methods related to FlightTrackingView can be added here
+}
+
+
 
 struct FlightLocation: Identifiable {
     let id = UUID()
     let coordinate: CLLocationCoordinate2D
 }
 
-struct Polyline: Shape {
-    var points: [CLLocationCoordinate2D]
 
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
+struct FlightTrackingView: View {
+    @StateObject private var viewModel = FlightTrackingViewModel(locationManager2: LocationManager2())
 
-        guard let first = points.first else {
-            return path
-        }
-
-        path.move(to: CGPoint(x: first.latitude, y: first.longitude))
-
-        for point in points {
-            path.addLine(to: CGPoint(x: point.latitude, y: point.longitude))
-        }
-
-        return path
-    }
-}
-
-
-
-final class FlightTrackingView: NSObject, View{
-    @State private var locations: [FlightLocation] = []
-    @State private var isRecording = false
-    @State private var isMapViewVisible = false
-    @State private var userTrackingMode: MKUserTrackingMode = .follow
-    @State private var region: MKCoordinateRegion?
-    @State private var shouldUpdatePolyline = false
-    @State private var locationManager = CLLocationManager()
-    
-    let testLocation = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
-    let testEndLocation = CLLocationCoordinate2D(latitude: 47.6062, longitude: -122.3321)
-    
-    
-    
     var body: some View {
         NavigationView {
-            
-            // background image for the main menu
-            ZStack{
+            ZStack {
                 Image("flighttrack")
                     .resizable()
                     .scaledToFill()
@@ -64,7 +121,7 @@ final class FlightTrackingView: NSObject, View{
                 
                 // main viewable code
                 VStack {
-                    if !isMapViewVisible { // Only show in the main menu
+                    if !self.viewModel.isMapViewVisible { // Only show in the main menu
                         Text("Flight Data Tracker")
                             .font(.system(size: 45))
                             .padding(10)
@@ -77,23 +134,24 @@ final class FlightTrackingView: NSObject, View{
                     
                     Spacer()
                     
-                    if isMapViewVisible {
+                    if self.viewModel.isMapViewVisible {
                         MapViewRepresentable(
-                            locations: $locations,
-                            userTrackingMode: $userTrackingMode,
-                            region: $region,
-                            shouldUpdatePolyline: $shouldUpdatePolyline
+                            locations: $viewModel.locations,
+                            userTrackingMode: $viewModel.userTrackingMode,
+                            region: $viewModel.region,
+                            shouldUpdatePolyline: $viewModel.shouldUpdatePolyline,
+                            mapView: $viewModel.mapView
                         )
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarTitle("Flight Tracking")
                         .navigationBarItems(
                             leading: Button("Back") {
-                                self.isMapViewVisible = false
+                                self.viewModel.isMapViewVisible = false
                             }
-                            .foregroundColor(Color.white)
-                            .font(.system(size: 24)),
+                                .foregroundColor(Color.white)
+                                .font(.system(size: 24)),
                             trailing: Button(action: {
-                                self.userTrackingMode = .follow
+                                self.viewModel.userTrackingMode = .follow
                             }) {
                                 Image(systemName: "location.fill")
                                     .font(.title)
@@ -102,146 +160,125 @@ final class FlightTrackingView: NSObject, View{
                         )
                         .onAppear {
                             // Request location permission
-                            self.locationManager.requestWhenInUseAuthorization()
-
+                            self.viewModel.locationManager2.requestLocationPermission()
+                            
                             // Set the delegate to receive location updates
-                            self.locationManager.delegate = self
-
+                            self.viewModel.locationManager2.delegate = self.viewModel
+                            
                             // Start updating location
-                            self.locationManager.startUpdatingLocation()
+                            self.viewModel.locationManager2.startUpdatingLocation()
                         }
                         
                         
                         // "Start Flight" button only visible in the View Map screen
-                       Button(action: {
-                           // Toggle recording state when "Start Flight" is pressed
-                           self.isRecording.toggle()
-                           self.shouldUpdatePolyline = self.isRecording
-                       }) {
-                           Text(isRecording ? "Finish Flight" : "Start Flight")
-                               .font(.headline)
-                               .foregroundColor(.white)
-                               .padding()
-                               .background(isRecording ? Color.red : Color.blue)
-                               .cornerRadius(10)
-                       }
-                       .padding()
+                        Button(action: {
+                            // Toggle recording state when "Start Flight" is pressed
+                            self.viewModel.isRecording.toggle()
+                            self.viewModel.shouldUpdatePolyline = self.viewModel.isRecording
+                        }) {
+                            Text(viewModel.isRecording ? "Finish Flight" : "Start Flight")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(viewModel.isRecording ? Color.red : Color.blue)
+                                .cornerRadius(10)
+                        }
+                        .padding()
                         
-                        //this is zoom button
                         HStack {
                             // Zoom out button
                             Button(action: {
-                                // Adjust the span to zoom out
-                                self.region?.span.latitudeDelta *= 1.5
-                                self.region?.span.longitudeDelta *= 1.5
+                                self.viewModel.adjustMapZoomLevel(factor: 1.5)
                             }) {
                                 Image(systemName: "minus.circle")
                                     .font(.title)
                                     .foregroundColor(.white)
                             }
 
+
+
                             // Zoom in button
                             Button(action: {
-                                // Adjust the span to zoom in
-                                self.region?.span.latitudeDelta /= 1.5
-                                self.region?.span.longitudeDelta /= 1.5
+                                self.viewModel.adjustMapZoomLevel(factor: 1.0 / 1.5)
                             }) {
                                 Image(systemName: "plus.circle")
                                     .font(.title)
                                     .foregroundColor(.white)
                             }
-                            .offset(y: 50) // Adjust the offset as needed
-                            .opacity(isMapViewVisible ? 1.0 : 0.0)
+                            .opacity(self.viewModel.isMapViewVisible ? 1.0 : 0.0)
                         }
-                        .padding()
-                        .offset(y: 0) // Adjust the offset as needed
-                        .opacity(isMapViewVisible ? 1.0 : 0.0)
+
                         
-                    } else {
-                        // Main content without the map
-                        Button(action: {
-                            self.isMapViewVisible = true
-                        }) {
-                            HStack {
-                                Image(systemName: "map") // Replace with the name of your icon
-                                    .font(.title)
-                                    .foregroundColor(.white)
-                                
-                                Text("View Map")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                            }
-                            .frame(width: 170, height: 20)
-                            .padding()
-                            .background(
-                                Rectangle()
-                                    .fill(Color.blue)
-                            )
-                            .cornerRadius(10)
-                        }
-                        .contentShape(Rectangle())
-                        .navigationBarTitle("")
-                    }
-                    
-                    
+                    }else {
+                    // Main content without the map
                     Button(action: {
-                        if self.isRecording {
-                            // Finish recording
-                            self.isRecording.toggle()
-                            self.shouldUpdatePolyline = false
-                        } else {
-                            // Start recording
-                            self.isRecording.toggle()
-                            self.shouldUpdatePolyline = true
-                        }
+                        self.viewModel.isMapViewVisible = true
                     }) {
-                        Text(isRecording ? "Finish Flight" : "Start Flight")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(isRecording ? Color.red : Color.blue)
-                            .cornerRadius(10)
+                        HStack {
+                            Image(systemName: "map") // Replace with the name of your icon
+                                .font(.title)
+                                .foregroundColor(.white)
+                            
+                            Text("View Map")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 170, height: 20)
+                        .padding()
+                        .background(
+                            Rectangle()
+                                .fill(Color.blue)
+                        )
+                        .cornerRadius(10)
                     }
-                    .padding()
+                    .contentShape(Rectangle())
+                    .navigationBarTitle("")
+                }
+            }
+                
+                .onAppear {
+                    // Request location permission
+                    self.viewModel.locationManager2.requestLocationPermission()
+                    
+                    //set the delegate to recieve location updates
+                    self.viewModel.locationManager2.delegate = self.viewModel
+                    
+                    // Start updating location
+                    self.viewModel.locationManager2.startUpdatingLocation()
                 }
             }
         }
     }
-    
+            
+        
+
     private func startRecording() {
-        self.isRecording = true
-        self.shouldUpdatePolyline = true
-        self.locations.removeAll()
+        viewModel.isRecording = true
+        viewModel.shouldUpdatePolyline = true
+        viewModel.locations.removeAll()
     }
 
     private func finishRecording() {
-        self.isRecording = false
-        self.shouldUpdatePolyline = false
-        self.locationManager.stopUpdatingLocation()
+        viewModel.isRecording = false
+        viewModel.shouldUpdatePolyline = false
+        viewModel.locationManager2.stopUpdatingLocation()
     }
 
 }
-
-
 
 struct MapViewRepresentable: UIViewRepresentable {
     @Binding var locations: [FlightLocation]
     @Binding var userTrackingMode: MKUserTrackingMode
     @Binding var region: MKCoordinateRegion?
     @Binding var shouldUpdatePolyline: Bool
+    
+    @Binding var mapView: MKMapView?
 
     let testLocation = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
-
-        // Set the initial region with the test location
-        let initialRegion = MKCoordinateRegion(
-            center: testLocation,
-            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        )
-        mapView.setRegion(initialRegion, animated: false)
         return mapView
     }
 
@@ -270,6 +307,10 @@ struct MapViewRepresentable: UIViewRepresentable {
         if let unwrappedRegion = region {
             uiView.setRegion(unwrappedRegion, animated: true)
         }
+        
+        //ensure that the map view reference is updated
+        mapView = uiView
+        
     }
 
     func makeCoordinator() -> Coordinator {
@@ -286,14 +327,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         // Implement any delegate methods if needed
     }
 }
-
-extension FlightTrackingView: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // Update the location during recording
-        guard isRecording, let location = locations.last?.coordinate else { return }
-        self.locations.append(FlightLocation(coordinate: location))
-    }
-}
+        
 
 
 struct FlightTrackingView_Previews: PreviewProvider {
@@ -302,68 +336,3 @@ struct FlightTrackingView_Previews: PreviewProvider {
     }
 }
 
-
-//import UIKit
-//import CoreLocation
-//import MapKit
-//
-//class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-//    @IBOutlet weak var mapView: MKMapView!
-//    @IBOutlet weak var startStopButton: UIButton!
-//
-//    let locationManager = CLLocationManager()
-//    var polyline: MKPolyline?
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        requestLocationAuthorization()
-//        mapView.delegate = self
-//    }
-//
-//    // MARK: - Location Management
-//
-//    func requestLocationAuthorization() {
-//        locationManager.delegate = self
-//        locationManager.requestWhenInUseAuthorization()
-//    }
-//
-//    @IBAction func startStopButtonTapped(_ sender: UIButton) {
-//        if locationManager.isUpdatingLocation {
-//            locationManager.stopUpdatingLocation()
-//        } else {
-//            polyline = nil  // Reset polyline when starting a new track
-//            locationManager.startUpdatingLocation()
-//        }
-//    }
-//
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let location = locations.last else { return }
-//        updateMapView(with: location.coordinate)
-//    }
-//
-//    func updateMapView(with coordinate: CLLocationCoordinate2D) {
-//        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-//        mapView.setRegion(region, animated: true)
-//
-//        var coordinates = polyline?.coordinate ??
-//            [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
-//        coordinates.append(coordinate)
-//        polyline = MKPolyline(coordinates: &coordinates, count: coordinates.count)
-//
-//        mapView.removeOverlays(mapView.overlays)
-//        mapView.addOverlay(polyline!)
-//    }
-//
-//    // MARK: - Map View Delegate
-//
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//        if overlay is MKPolyline {
-//            let renderer = MKPolylineRenderer(overlay: overlay)
-//            renderer.strokeColor = UIColor.blue
-//            renderer.lineWidth = 3
-//            return renderer
-//        }
-//        return MKOverlayRenderer()
-//    }
-//}
