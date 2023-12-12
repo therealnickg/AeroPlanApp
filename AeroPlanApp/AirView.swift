@@ -18,7 +18,7 @@ struct AirView: View {
 		ButtonItem(title: "Lost Communication Emergency Button",  destination: "LostCommunicationView", imageIcon: "lostcommIcon"),
 		ButtonItem(title: "Backup Pilot Instructions",  destination: "BackupInstructionsView", imageIcon: "backupinsIcon"),
 		ButtonItem(title: "Important Procedure Section",  destination: "ImportantProcedureView", imageIcon: "ipsIcon"),
-		ButtonItem(title: "Moving Map",  destination: "MovingMapView", imageIcon: "movingmapIcon")
+		//ButtonItem(title: "Moving Map",  destination: "MovingMapView", imageIcon: "movingmapIcon")
 	]
 	// Custom Font
 	let customFont = Font.custom("Geologica-Light", size: 30)
@@ -45,10 +45,12 @@ struct AirView: View {
 								.aspectRatio(contentMode: .fit)
 								.cornerRadius(10)
 								.frame(maxWidth: .infinity) // Take up the entire width
-								.opacity(0.8)
+								.opacity(0.4)
 							  Text(button.title)
 								  .font(customFont)
-								  .foregroundColor(Color(hex: 0x263B4F, alpha: 1.0))
+							  // 0xEDEDE9
+								  .foregroundColor(Color(hex: 0x111D29, alpha: 1.0))
+								  .shadow(radius: 15)
 								  .padding(.trailing, 100) // Space buttons from side edges
 							  Image(button.imageIcon)
 								  .resizable()
@@ -76,8 +78,8 @@ struct AirView: View {
 			return AnyView(BackupPilotInstructionsView())	// Change EmptyView()
 		case "ImportantProcedureView":
 			return AnyView(EmergencyProceduresChecklistView())	// Change EmptyView()
-		case "MovingMapView":
-			return AnyView(NearestWaypoint())	// Change ToolsView()
+		/*case "MovingMapView":
+			return AnyView(NearestWaypoint())	// Change ToolsView()*/
 		default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
 		}
