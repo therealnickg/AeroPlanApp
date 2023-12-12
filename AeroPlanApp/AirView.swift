@@ -25,10 +25,10 @@ struct AirView: View {
     
     var body: some View {
 		ZStack {
-		    LinearGradient(gradient: Gradient(colors: [Color(hex: 0x5EC9EC, alpha: 0.9), Color(hex: 0x0F2038, alpha: 0.9)]),
-					 startPoint: .bottom,
-					 endPoint: .top)
-			  .ignoresSafeArea()
+			// background-image
+			Image("flight-mode-background")
+				.resizable()
+				.ignoresSafeArea()
 		    
 		    ScrollView {
 			  VStack(spacing: 20) { // Adjust the spacing between buttons

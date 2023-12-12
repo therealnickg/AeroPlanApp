@@ -29,7 +29,7 @@ struct ToolsView: View {
     var body: some View {
 		ZStack {
 			// Background Color
-			LinearGradient(gradient: Gradient(colors: [Color(hex: 0x5EC9EC, alpha: 0.9), Color(hex: 0x162838, alpha: 0.9)]),
+			LinearGradient(gradient: Gradient(colors: [Color(hex: 0x5EC9EC, alpha: 0.9), Color(hex: 0x0F2038, alpha: 0.9)]),
 					 startPoint: .bottom,
 					 endPoint: .top)
 			  .ignoresSafeArea()

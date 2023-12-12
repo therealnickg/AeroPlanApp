@@ -29,10 +29,10 @@ struct PreflightView: View {
     
     var body: some View {
 		ZStack {
-			// background-image
-			Image("ground-mode-background")
-				.resizable()
-				.ignoresSafeArea()
+			LinearGradient(gradient: Gradient(colors: [Color(hex: 0x5EC9EC, alpha: 0.9), Color(hex: 0x0F2038, alpha: 0.9)]),
+					 startPoint: .bottom,
+					 endPoint: .top)
+			  .ignoresSafeArea()
 			
 			ScrollView {
 			VStack(spacing: 20) { // Adjust the spacing between buttons
