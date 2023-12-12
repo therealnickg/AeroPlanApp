@@ -42,26 +42,9 @@ struct PersonalMinimumsView: View {
                     TextField("Feet", text: $runwayWidth)
                         .keyboardType(.numberPad)
                 }
-
-                Section {
-                    Button(action: {
-                        // Save the entered minimums to your data model or perform any other action.
-                    }) {
-                        Text("Save")
-                    }
-                }
             }
             .navigationBarTitle("Personal Minimums")
         }
-        NavigationLink(destination: ExistingConditionsView(visibility: visibility, cloudCeiling: cloudCeiling, windSpeed: windSpeed)) {
-                        Text("Enter Airport Conditions")
-                            .font(.headline)
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-        .navigationBarTitle("Personal Minimums")
     }
 }
 

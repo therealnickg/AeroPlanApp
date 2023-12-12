@@ -17,7 +17,7 @@ struct ToolsView: View {
     
 	let buttons: [ButtonItem] = [
 		ButtonItem(title: "ATC - Communication Practice",  destination: "ATCView", imageIcon: "ipsIcon"),
-		ButtonItem(title: "Traffic Pattern Visualization",  destination: "TrafficPatternVisualizationView", imageIcon: "backupinsIcon"),
+		ButtonItem(title: "Traffic Pattern Visualization",  destination: "VFRTrafficPatternView", imageIcon: "backupinsIcon"),
 		ButtonItem(title: "Experience Notes for Airports",  destination: "ExperienceNotesView", imageIcon: "ipsIcon"),
 		ButtonItem(title: "METAR Decoder",  destination: "METARView", imageIcon: "lostcommIcon"),
 		ButtonItem(title: "TAF Decoder",  destination: "TAFView", imageIcon: "movingmapIcon")
@@ -73,8 +73,8 @@ struct ToolsView: View {
 		  switch destination {
 		  case "ATCView":
 			return AnyView(ATCView())
-		  case "TrafficPatternVisualizationView":
-			return AnyView(EmptyView())	// Change EmptyView()
+		  case "VFRTrafficPatternView":
+			return AnyView(VFRTrafficPatternView())	// Change EmptyView()
 		  case "ExperienceNotesView":
 			return AnyView(EmptyView())	// Change EmptyView()
 		  case "METARView":

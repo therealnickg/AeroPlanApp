@@ -17,8 +17,9 @@ struct PreflightView: View {
     
 	let buttons: [ButtonItem] = [
 		ButtonItem(title: "IMSAFE Analysis",  destination: "IMSAFEAnalysisView", imageIcon: "ipsIcon"),
-		ButtonItem(title: "Personal Minimums Tracker",  destination: "PersonalMinimumsView", imageIcon: "backupinsIcon"),
+		ButtonItem(title: "Personal Minimums Tracker",  destination: "ExistingConditionsView", imageIcon: "backupinsIcon"),
 		ButtonItem(title: "Currency (VFR & IFR) Tracker",  destination: "CurrencyView", imageIcon: "ipsIcon"),
+        ButtonItem(title: "Suggested Altitude",  destination: "SuggestedAltitude", imageIcon: "ipsIcon"),
 		ButtonItem(title: "Aircraft Preflight",  destination: "AircraftPreflightView", imageIcon: "lostcommIcon"),
 		ButtonItem(title: "Time Arrival",  destination: "TimeArrivalView", imageIcon: "movingmapIcon")
 	]
@@ -77,12 +78,14 @@ struct PreflightView: View {
 		switch destination {
 		case "IMSAFEAnalysisView":
 			return AnyView(IMSAFE_analysis())	// Change ToolsView()
-		case "PersonalMinimumsView":
-			return AnyView(PersonalMinimumsView())	// Change EmptyView()
+		case "ExistingConditionsView":
+			return AnyView(ExistingConditionsView())	// Change EmptyView()
 		case "CurrencyView":
-			return AnyView(EmptyView())	// Change EmptyView()
+			return AnyView(CurrencyView())	// Change EmptyView()
 		case "AircraftPreflightView":
 			return AnyView(EmptyView())	// Change EmptyView()
+        case "SuggestedAltitude":
+            return AnyView(SuggestedAltitudeView())    // Change EmptyView()
 		case "TimeArrivalView":
 			return AnyView(FlightTimeCalculatorView())	// Change EmptyView()
 		default:

@@ -14,6 +14,9 @@
 		371D0B472B27EADB0020D2EF /* IMSAFE analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D0B462B27EADB0020D2EF /* IMSAFE analysis.swift */; };
 		371D0B492B27EB130020D2EF /* AirportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D0B482B27EB130020D2EF /* AirportListView.swift */; };
 		371D0B4B2B27EB420020D2EF /* AlternativesAirportsFlightPlanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D0B4A2B27EB420020D2EF /* AlternativesAirportsFlightPlanning.swift */; };
+		371D0B4D2B27EFEB0020D2EF /* SuggestedAltitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D0B4C2B27EFEB0020D2EF /* SuggestedAltitudeView.swift */; };
+		371D0B4F2B27F5A90020D2EF /* CurrencyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D0B4E2B27F5A90020D2EF /* CurrencyTracker.swift */; };
+		371D0B512B27FB270020D2EF /* VFRTrafficPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D0B502B27FB270020D2EF /* VFRTrafficPatternView.swift */; };
 		374D9ACB2AA1A06C00A33BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */; };
 		374D9ACE2AA1A06C00A33BA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374D9ACD2AA1A06C00A33BA8 /* Preview Assets.xcassets */; };
 		374D9AE12AA27B1C00A33BA8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 374D9AE02AA27B1C00A33BA8 /* FirebaseAnalytics */; };
@@ -50,7 +53,6 @@
 		374D9B232AA27E9800A33BA8 /* AirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B222AA27E9800A33BA8 /* AirView.swift */; };
 		374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B242AA27F1600A33BA8 /* ListView.swift */; };
 		374D9B272AA27F1A00A33BA8 /* NewPilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B262AA27F1A00A33BA8 /* NewPilotView.swift */; };
-		374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D9B282AA27F1F00A33BA8 /* SwiftUIView.swift */; };
 		37C194C72AB398F100D2A92E /* PersonalMinimumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C194C62AB398F100D2A92E /* PersonalMinimumsView.swift */; };
 		37C194E42AB6BA7800D2A92E /* METAR Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C194E32AB6BA7800D2A92E /* METAR Decoder.swift */; };
 		37C194E62AB6C90100D2A92E /* ExistingConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C194E52AB6C90100D2A92E /* ExistingConditionsView.swift */; };
@@ -92,6 +94,9 @@
 		371D0B462B27EADB0020D2EF /* IMSAFE analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IMSAFE analysis.swift"; sourceTree = "<group>"; };
 		371D0B482B27EB130020D2EF /* AirportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportListView.swift; sourceTree = "<group>"; };
 		371D0B4A2B27EB420020D2EF /* AlternativesAirportsFlightPlanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativesAirportsFlightPlanning.swift; sourceTree = "<group>"; };
+		371D0B4C2B27EFEB0020D2EF /* SuggestedAltitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedAltitudeView.swift; sourceTree = "<group>"; };
+		371D0B4E2B27F5A90020D2EF /* CurrencyTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTracker.swift; sourceTree = "<group>"; };
+		371D0B502B27FB270020D2EF /* VFRTrafficPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFRTrafficPatternView.swift; sourceTree = "<group>"; };
 		374D9AC32AA1A06B00A33BA8 /* AeroPlanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AeroPlanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		374D9ACD2AA1A06C00A33BA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -102,7 +107,6 @@
 		374D9B222AA27E9800A33BA8 /* AirView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirView.swift; sourceTree = "<group>"; };
 		374D9B242AA27F1600A33BA8 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		374D9B262AA27F1A00A33BA8 /* NewPilotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPilotView.swift; sourceTree = "<group>"; };
-		374D9B282AA27F1F00A33BA8 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		37C194C62AB398F100D2A92E /* PersonalMinimumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalMinimumsView.swift; sourceTree = "<group>"; };
 		37C194E32AB6BA7800D2A92E /* METAR Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "METAR Decoder.swift"; sourceTree = "<group>"; };
 		37C194E52AB6C90100D2A92E /* ExistingConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingConditionsView.swift; sourceTree = "<group>"; };
@@ -196,8 +200,10 @@
 				4A10B9372B246FAA00D7FFF9 /* Preview Content */,
 				4A10B9212B2467FE00D7FFF9 /* AeroPlanApp.swift */,
 				4A10B9232B2467FE00D7FFF9 /* ATCAnnotation.swift */,
+				371D0B4E2B27F5A90020D2EF /* CurrencyTracker.swift */,
 				4A10B91B2B2467FE00D7FFF9 /* FlightData.swift */,
 				4A10B9182B2467FE00D7FFF9 /* FlightLogEntry.swift */,
+				371D0B502B27FB270020D2EF /* VFRTrafficPatternView.swift */,
 				371D0B3C2B27E9A20020D2EF /* ReportView.swift */,
 				4A10B91D2B2467FE00D7FFF9 /* FlightTrackingView.swift */,
 				4A10B9192B2467FE00D7FFF9 /* GAPCView.swift */,
@@ -217,6 +223,7 @@
 				371D0B4A2B27EB420020D2EF /* AlternativesAirportsFlightPlanning.swift */,
 				374D9ACA2AA1A06C00A33BA8 /* Assets.xcassets */,
 				4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */,
+				371D0B4C2B27EFEB0020D2EF /* SuggestedAltitudeView.swift */,
 				4AD825C82AD2143E00279B0A /* ATCQuestion.swift */,
 				4AD825CA2AD21B0A00279B0A /* ATCView.swift */,
 				4A7D26952AB95104004FF0CF /* ColorHex.swift */,
@@ -233,7 +240,6 @@
 				37CC82052AA4340D003D1E09 /* Pilot.swift */,
 				374D9ACC2AA1A06C00A33BA8 /* Preview Content */,
 				374D9B202AA27E9400A33BA8 /* ProfileView.swift */,
-				374D9B282AA27F1F00A33BA8 /* SwiftUIView.swift */,
 				4AF8BE842ADB83E0007056C5 /* PreflightView.swift */,
 				4AF8BE862ADB87C0007056C5 /* ToolsView.swift */,
 				4A16848E2ADBA54F00D44B96 /* MetarView.swift */,
@@ -383,10 +389,11 @@
 				371D0B412B27EA300020D2EF /* BackupPilotInstructionsView.swift in Sources */,
 				4AD825CB2AD21B0A00279B0A /* ATCView.swift in Sources */,
 				4A4638942B0B2A83003D152A /* NearestWaypoint.swift in Sources */,
-				374D9B292AA27F1F00A33BA8 /* SwiftUIView.swift in Sources */,
+				371D0B512B27FB270020D2EF /* VFRTrafficPatternView.swift in Sources */,
 				371D0B492B27EB130020D2EF /* AirportListView.swift in Sources */,
 				374D9B252AA27F1600A33BA8 /* ListView.swift in Sources */,
 				4AD66BD92AFA1A7000ACB5DA /* TafView.swift in Sources */,
+				371D0B4F2B27F5A90020D2EF /* CurrencyTracker.swift in Sources */,
 				4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */,
 				4A10B9312B2467FF00D7FFF9 /* AeroPlanApp.swift in Sources */,
 				371D0B452B27EAA90020D2EF /* EmergencyProceduresChecklistView.swift in Sources */,
@@ -406,6 +413,7 @@
 				4A10B9292B2467FF00D7FFF9 /* GAPCView.swift in Sources */,
 				4A16848F2ADBA54F00D44B96 /* MetarView.swift in Sources */,
 				374D9B1D2AA27E5000A33BA8 /* HomeView.swift in Sources */,
+				371D0B4D2B27EFEB0020D2EF /* SuggestedAltitudeView.swift in Sources */,
 				37CC82082AA4341D003D1E09 /* DataManager.swift in Sources */,
 				371D0B472B27EADB0020D2EF /* IMSAFE analysis.swift in Sources */,
 				374D9B232AA27E9800A33BA8 /* AirView.swift in Sources */,
@@ -473,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -527,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -546,7 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AeroPlanApp/Preview Content\"";
-				DEVELOPMENT_TEAM = X7V463Q8JF;
+				DEVELOPMENT_TEAM = G9566MW89P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -560,7 +568,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.geo.AeroPlanApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolasg.AeroPlanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -578,7 +586,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AeroPlanApp/Preview Content\"";
-				DEVELOPMENT_TEAM = X7V463Q8JF;
+				DEVELOPMENT_TEAM = G9566MW89P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -592,7 +600,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.geo.AeroPlanApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolasg.AeroPlanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
