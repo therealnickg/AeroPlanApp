@@ -15,7 +15,7 @@ struct AirView: View {
 	}
     
 	let buttons: [ButtonItem] = [
-		ButtonItem(title: "Lost Communication Emergency Button",  destination: "LostCommunicationView", imageIcon: "lostcommIcon"),
+		ButtonItem(title: "Lost Communication Emergency Button",  destination: "LostCommunicationView", imageIcon: "ipsIcon"),
 		ButtonItem(title: "Backup Pilot Instructions",  destination: "BackupInstructionsView", imageIcon: "backupinsIcon"),
 		ButtonItem(title: "Important Procedure Section",  destination: "ImportantProcedureView", imageIcon: "ipsIcon"),
 		//ButtonItem(title: "Moving Map",  destination: "MovingMapView", imageIcon: "movingmapIcon")

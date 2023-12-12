@@ -17,10 +17,10 @@ struct ToolsView: View {
     
 	let buttons: [ButtonItem] = [
 		ButtonItem(title: "ATC - Communication Practice",  destination: "ATCView", imageIcon: "ipsIcon"),
-		ButtonItem(title: "Traffic Pattern Visualization",  destination: "VFRTrafficPatternView", imageIcon: "backupinsIcon"),
-		ButtonItem(title: "Experience Notes for Airports",  destination: "ExperienceNotesView", imageIcon: "ipsIcon"),
-		ButtonItem(title: "METAR Decoder",  destination: "METARView", imageIcon: "lostcommIcon"),
-		ButtonItem(title: "TAF Decoder",  destination: "TAFView", imageIcon: "movingmapIcon")
+		ButtonItem(title: "Traffic Pattern Visualization",  destination: "VFRTrafficPatternView", imageIcon: "movingmapIcon"),
+		ButtonItem(title: "Experience Notes for Airports",  destination: "ExperienceNotesView", imageIcon: "backupinsIcon"),
+		ButtonItem(title: "METAR Decoder",  destination: "METARView", imageIcon: "ipsIcon"),
+		ButtonItem(title: "TAF Decoder",  destination: "TAFView", imageIcon: "backupinsIcon")
 	]
 	// Custom Font
 	let customFont = Font.custom("", size: 30)
