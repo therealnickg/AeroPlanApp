@@ -102,12 +102,12 @@ struct HomeView: View {
                             }
                         }
                         else if appMode == .logs {
-                                NavigationLink(destination: EmptyView(), tag: .logs, selection: appModeBinding) {
+                            NavigationLink(destination: LogDetailView(logEntry: FlightLogEntry()), tag: .logs, selection: appModeBinding) {
                                     EmptyView()
                                 }
                             }
                         else if appMode == .lostCom {
-                            NavigationLink(destination: EmptyView(), tag: .lostCom, selection: appModeBinding) {
+                            NavigationLink(destination: LostComView(), tag: .lostCom, selection: appModeBinding) {
                                 EmptyView()
                             }
                         }

@@ -84,6 +84,7 @@
 		4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */; };
 		4AF8BE852ADB83E0007056C5 /* PreflightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8BE842ADB83E0007056C5 /* PreflightView.swift */; };
 		4AF8BE872ADB87C0007056C5 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8BE862ADB87C0007056C5 /* ToolsView.swift */; };
+		EDFC73892B2905DA00CD04A3 /* LostComView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC73882B2905DA00CD04A3 /* LostComView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		4AD825CE2AD225A600279B0A /* ATCGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCGameViewModel.swift; sourceTree = "<group>"; };
 		4AF8BE842ADB83E0007056C5 /* PreflightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreflightView.swift; sourceTree = "<group>"; };
 		4AF8BE862ADB87C0007056C5 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		EDFC73882B2905DA00CD04A3 /* LostComView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LostComView.swift; path = ../../../../Downloads/LostComView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				4A10B91C2B2467FE00D7FFF9 /* LogEntryRow.swift */,
 				37C194E32AB6BA7800D2A92E /* METAR Decoder.swift */,
 				4A16848E2ADBA54F00D44B96 /* MetarView.swift */,
+				EDFC73882B2905DA00CD04A3 /* LostComView.swift */,
 				4A4638932B0B2A83003D152A /* NearestWaypoint.swift */,
 				374D9B262AA27F1A00A33BA8 /* NewPilotView.swift */,
 				4A5AAD672B0B6BF700EA4C8A /* NWLocationManager.swift */,
@@ -396,6 +399,7 @@
 				371D0B4F2B27F5A90020D2EF /* CurrencyTracker.swift in Sources */,
 				4AD825CF2AD225A600279B0A /* ATCGameViewModel.swift in Sources */,
 				4A10B9312B2467FF00D7FFF9 /* AeroPlanApp.swift in Sources */,
+				EDFC73892B2905DA00CD04A3 /* LostComView.swift in Sources */,
 				371D0B452B27EAA90020D2EF /* EmergencyProceduresChecklistView.swift in Sources */,
 				4AD825C92AD2143E00279B0A /* ATCQuestion.swift in Sources */,
 				4A5AAD662B0B621300EA4C8A /* CompassViewModel.swift in Sources */,
