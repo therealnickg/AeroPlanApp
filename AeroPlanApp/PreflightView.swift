@@ -20,7 +20,8 @@ struct PreflightView: View {
 		ButtonItem(title: "Personal Minimums Tracker",  destination: "ExistingConditionsView", imageIcon: "backupinsIcon"),
 		ButtonItem(title: "Currency (VFR & IFR) Tracker",  destination: "CurrencyView", imageIcon: "ipsIcon"),
         ButtonItem(title: "Suggested Altitude",  destination: "SuggestedAltitude", imageIcon: "ipsIcon"),
-		ButtonItem(title: "Time Arrival",  destination: "TimeArrivalView", imageIcon: "movingmapIcon")
+		ButtonItem(title: "Time Arrival",  destination: "TimeArrivalView", imageIcon: "movingmapIcon"),
+        ButtonItem(title: "General Aircraft Preflight Checklist", destination: "GAPCView", imageIcon: "ipsIcon")
 	]
 	// Custom Font
 	let customFont = Font.custom("Geologica-Light", size: 25)
@@ -87,6 +88,8 @@ struct PreflightView: View {
             return AnyView(SuggestedAltitudeView())    // Change EmptyView()
 		case "TimeArrivalView":
 			return AnyView(FlightTimeCalculatorView())	// Change EmptyView()
+        case "GAPCView":
+            return AnyView(GAPCView())
 		default:
 			return AnyView(EmptyView()) // Handle the default case or provide an appropriate view
 		}
