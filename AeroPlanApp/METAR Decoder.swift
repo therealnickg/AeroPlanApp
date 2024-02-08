@@ -12,7 +12,7 @@ import Foundation
 var airportCode = ""
 
 func getMETAR() -> String {
-    let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
+    let apiKey = "xx"
     let apiUrl = "https://aeroapi.flightaware.com/aeroapi/"
 
     let payload = ["max_pages": 1]
