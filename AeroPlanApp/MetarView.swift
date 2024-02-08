@@ -18,7 +18,7 @@ class METARViewModel: ObservableObject {
     func getMETAR() {
 		isFetching = true
 
-		let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
+		let apiKey = "enter API key here"
 		let apiUrl = "https://aeroapi.flightaware.com/aeroapi/"
 
 		let authHeader = ["x-apikey": apiKey]
