@@ -4,7 +4,7 @@
 //
 //  Created by Jovanni Garcia on 09/14/23.
 //
-// let apiKey = "dVu8sPyDDM7K7MfkH2582AddlqTI4vnS"
+// let apiKey = "xx"
 // let apiUrl = "https://aeroapi.flightaware.com/aeroapi/"
 
 import SwiftUI
